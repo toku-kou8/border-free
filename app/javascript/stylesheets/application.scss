@@ -1,2 +1,27 @@
 @use '~bootstrap/scss/bootstrap';
 @use '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+.simple-calendar{
+  .day{
+    height: 80px;
+  }
+  .prev-month {
+    background: #888;
+  }
+
+  .next-month {
+    background: #888;
+  }
+}
+
+.scroll{
+  // width: 100px;
+  height: 80px;
+  overflow: scroll;
+  background: #fde0df;
+  overflow-x: hidden;
+}
+
+.top{
+  margin: 0 auto;
+}
