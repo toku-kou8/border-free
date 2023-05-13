@@ -2,23 +2,36 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_up_path_for(resource)
+    # byebug
     case resource
       when Teacher
+        teacher_top_path
+      when :student
         root_path
-      when Student
+      when :admin
         root_path
-      when Admin
+    end
+  end
+
+  def after_sign_inresour_path_for(resource)
+    byebug
+    case resource
+      when Teacher
+        teacher_top_path
+      when :student
+        root_path
+      when :admin
         root_path
     end
   end
 
   def after_sign_out_path_for(resource)
     case resource
-      when Teacher
+      when :teacher
         root_path
-      when Student
+      when :student
         root_path
-      when Admin
+      when :admin
         root_path
     end
   end
@@ -28,8 +41,7 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :name_kana, :phone_number, :school, :faculty, :birth])
     elsif resource_class == Student
       devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :name_kana, :phone_number, :parent_name, :parent_name_kana, :birth])
-    else
-      super
+
     end
   end
 end

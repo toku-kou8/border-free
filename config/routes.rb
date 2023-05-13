@@ -24,10 +24,10 @@ Rails.application.routes.draw do
   end
 
   namespace :teacher do
-    get 'teachers/mypage' => 'teacher/homes#top', as: 'top'
+    get 'mypage' => 'homes#top', as: 'top'
     resources :students, only:[:index, :show]
-    get 'teachers/students/result/:id' => 'teacher/students#result', as: 'result'
-    resources :shifts, only: [:index, :create, :update]
+    get 'students/result/:id' => 'students#result', as: 'result'
+    resources :shifts, only: [:index, :create, :update, :destroy]
     resources :classes, only: [:index, :show]
   end
 
