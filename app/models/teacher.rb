@@ -5,5 +5,6 @@ class Teacher < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :shifts
-  # has_many :subjects
+  has_many :subject_teachers
+  has_many :subjects, through: :subject_teachers
 end
