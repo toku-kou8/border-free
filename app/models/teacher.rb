@@ -5,4 +5,5 @@ class Teacher < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :shifts
+  # has_many :subjects
 end

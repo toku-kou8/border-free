@@ -1,0 +1,31 @@
+<%= render "students/shared/header" %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<p id="notice"><%= notice %></p>
+
+<div class="toppage">
+  <h2 class="top">授業予約</h2>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-3 ml-3">
+    	<div class="schedule"></div>
+    </div>
+
+    <div class="col-md-10 offset-md-1">
+    <%= week_calendar events: @shifts do |date, shifts| %>
+      <div class="mb-3"><%= date.day %></div>
+      <% shifts.each do |shift| %>
+        <div>
+            <%= shift.timetables(timetable) %>時間目
+            <%= shift.start_time.strftime("%H:%M~") %>
+            <%= shift.teacher.name %>
+            <% shift.teacher.subjects.each do |subject| %>
+              <%= subject %>
+            <% end %>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
