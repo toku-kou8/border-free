@@ -59,3 +59,4 @@ gem "simple_calendar", "~> 2.0"
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
+gem 'enum_help'

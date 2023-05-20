@@ -1,4 +1,10 @@
 ja:
+  enums:
+    subject: # モデル名
+      grade: # カラム名
+        elementary: '小学生' # enumの値
+        junior: '中学生' # enumの値
+        high: '高校生' # enumの値
   date:
     abbr_day_names:
       - 日

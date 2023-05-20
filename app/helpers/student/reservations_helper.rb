@@ -1,0 +1,2 @@
+module Student::ReservationsHelper
+end

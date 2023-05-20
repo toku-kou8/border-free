@@ -35,7 +35,10 @@ Rails.application.routes.draw do
     resources :students, only:[:index, :show]
     resources :teachers, only:[:index, :show]
     resources :shifts, only: [:index, :update]
-
+    get 'classes/subject' => 'classes#subject', as: 'subject'
+    post 'classes/subject' => 'classes#subcreate', as: 'subjects'
+    patch 'classes/subject/:id' => 'classes#subupdate', as: 'subject_update'
+    delete 'classes/subject/:id' => 'classes#destory', as: 'subject_destroy'
   end
 
   namespace :student do
