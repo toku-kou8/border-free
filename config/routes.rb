@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
   namespace :teacher do
     get 'mypage' => 'homes#top', as: 'top'
+    get 'subject' => 'homes#edit', as: 'home_edit'
+    post 'subject' => 'homes#create', as: 'homes_subject'
+    delete 'subject/:id' => 'homes#destory', as: 'home_destroy'
     resources :students, only:[:index, :show]
     get 'students/result/:id' => 'students#result', as: 'result'
     resources :shifts, only: [:index, :create, :update, :destroy]
