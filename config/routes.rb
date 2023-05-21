@@ -45,9 +45,9 @@ Rails.application.routes.draw do
   end
 
   namespace :student do
-    get 'students/mypage' => 'student/homes#show', as: 'show'
-    get 'students/edit' => 'student/homes#edit', as: 'edit'
-    patch 'students' => 'student/homes#update', as: 'update'
+    get 'mypage' => 'homes#index', as: 'show'
+    get 'edit' => 'homes#edit', as: 'edit'
+    patch 'students' => 'homes#update', as: 'update'
     resources :reservations, only:[:index, :create, :update]
     resources :results, only: [:index, :new, :create, :edit, :update]
     resources :classes, only: [:index, :show, :create, :update]

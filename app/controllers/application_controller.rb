@@ -6,32 +6,32 @@ class ApplicationController < ActionController::Base
     case resource
       when Teacher
         teacher_top_path
-      when :student
-        root_path
-      when :admin
+      when Student
+        student_show_path
+      when Admin
         root_path
     end
   end
 
-  def after_sign_inresour_path_for(resource)
-    byebug
+  def after_sign_in_path_for(resource)
+    # byebug
     case resource
       when Teacher
         teacher_top_path
-      when :student
-        root_path
-      when :admin
+      when Student
+        student_show_path
+      when Admin
         root_path
     end
   end
 
   def after_sign_out_path_for(resource)
     case resource
-      when :teacher
+      when Teacher
         root_path
-      when :student
+      when Student
         root_path
-      when :admin
+      when Admin
         root_path
     end
   end

@@ -12,6 +12,9 @@
           <%= link_to 'マイページ', student_show_path, class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
+          <%= link_to "授業予約", student_classes_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
           <%= link_to "生徒ログアウト", destroy_student_session_path, method: :delete, class: 'nav-link text-dark' %>
         </li>
         <% else %>
