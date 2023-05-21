@@ -48,7 +48,7 @@ Rails.application.routes.draw do
     get 'mypage' => 'homes#index', as: 'show'
     get 'edit' => 'homes#edit', as: 'edit'
     patch 'students' => 'homes#update', as: 'update'
-    resources :reservations, only:[:index, :create, :update]
+    resources :reservations, only:[:index, :create, :update, :destroy]
     resources :results, only: [:index, :new, :create, :edit, :update]
     resources :classes, only: [:index, :show, :create, :update]
   end

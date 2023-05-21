@@ -10,19 +10,45 @@
   <div class="row">
     <div class="col-md-3 ml-3">
     	<div class="schedule"></div>
+    	<table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>開始時間</th>
+            <th>先生</th>
+            <th>教科</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody class = "scroll">
+          <% @lessons.each do |lesson| %>
+            <tr>
+              <td><%= lesson.start_time.strftime("%d")%>(<%= week[lesson.start_time.wday] %>) <%= lesson.start_time.strftime("%H:%M ~")%></td>
+              <td><%= lesson.teacher.name %></td>
+              <td><%= lesson.subject.name_grade %></td>
+              <td><%= link_to "削除", student_reservation_path(lesson), method: :delete,class: "text-danger" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
 
-    <div class="col-md-10 offset-md-1">
+    <div class="col-md-8">
     <%= week_calendar events: @shifts do |date, shifts| %>
       <div class="mb-3"><%= date.day %></div>
       <% shifts.each do |shift| %>
         <div>
-            <%= shift.timetables(timetable) %>時間目
-            <%= shift.start_time.strftime("%H:%M~") %>
-            <%= shift.teacher.name %>
-            <% shift.teacher.subjects.each do |subject| %>
-              <%= subject %>
-            <% end %>
+            <%= shift.timetables(shift.timetable) %>限
+            <%= shift.start_time.strftime("%H:%M~") %> <br>
+            <%= shift.teacher.name %>先生
+          <%= form_with model: @lesson, url: student_reservations_path(shift_id: shift.id) do |f| %>
+            <%= f.hidden_field :teacher_id, :value => shift.teacher.id %>
+            <%= f.collection_select :subject_id, shift.teacher.subjects, :id, :name_grade %>
+            <%= f.hidden_field :start_time, :value => shift.start_time %>
+            <%= f.hidden_field :timetable, :value => shift.timetable %>
+            <%= f.hidden_field :shift_id, :value => shift.id %>
+            <%= f.submit "予約", class: "btn btn-success" %>
+          <% end %>
         </div>
       <% end %>
     <% end %>
