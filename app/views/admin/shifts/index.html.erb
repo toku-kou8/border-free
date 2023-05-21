@@ -1,0 +1,39 @@
+<%= render "admin/shared/header" %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<p id="notice"><%= notice %></p>
+
+<div class="toppage">
+  <h2 class="top">シフト調整</h2>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-3 ml-3">
+    	<div class="schedule"></div>
+    </div>
+
+    <div class="col-md-10 offset-md-1">
+    <%= week_calendar events: @shifts do |date, shifts| %>
+      <div class="mb-3"><%= date.day %></div>
+      <% shifts.each do |shift| %>
+        <div>
+          <% if shift.status == 0 %>
+            <%= shift.start_time.strftime("%H:%M~") %>
+            <%= shift.teacher.name %>
+            <%= link_to "削除", admin_shift_path(shift, status: 1), method: :patch,class: "text-danger ml-2" %>
+          <% elsif shift.status == 1 %>
+            <nobr class="text-decoration-underline mr-2">
+            <%= shift.start_time.strftime("%H:%M~") %>
+            <%= shift.teacher.name %>
+            </nobr>
+            <%= link_to "削除取り消し", admin_shift_path(shift, status: 0), method: :patch,class: "text-primary" %>
+          <% else %>
+            <%= shift.start_time.strftime("%H:%M~") %>
+            <%= shift.teacher.name %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>

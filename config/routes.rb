@@ -24,10 +24,13 @@ Rails.application.routes.draw do
   end
 
   namespace :teacher do
-    get 'teachers/mypage' => 'teacher/homes#top', as: 'top'
+    get 'mypage' => 'homes#top', as: 'top'
+    get 'subject' => 'homes#edit', as: 'home_edit'
+    post 'subject' => 'homes#create', as: 'homes_subject'
+    delete 'subject/:id' => 'homes#destory', as: 'home_destroy'
     resources :students, only:[:index, :show]
-    get 'teachers/students/result/:id' => 'teacher/students#result', as: 'result'
-    resources :shifts, only: [:index, :create, :update]
+    get 'students/result/:id' => 'students#result', as: 'result'
+    resources :shifts, only: [:index, :create, :update, :destroy]
     resources :classes, only: [:index, :show]
   end
 
@@ -35,7 +38,10 @@ Rails.application.routes.draw do
     resources :students, only:[:index, :show]
     resources :teachers, only:[:index, :show]
     resources :shifts, only: [:index, :update]
-
+    get 'classes/subject' => 'classes#subject', as: 'subject'
+    post 'classes/subject' => 'classes#subcreate', as: 'subjects'
+    patch 'classes/subject/:id' => 'classes#subupdate', as: 'subject_update'
+    delete 'classes/subject/:id' => 'classes#destory', as: 'subject_destroy'
   end
 
   namespace :student do

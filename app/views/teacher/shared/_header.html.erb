@@ -9,17 +9,20 @@
         <ul class="navbar-nav ml-auto">
         <% if teacher_signed_in? %>
         <li class="nav-item">
-          <%= link_to "講師ログアウト", destroy_teacher_session_path, method: :delete, class: 'nav-link text-dark' %>
+          <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete, class: 'nav-link text-dark btn' %>
         </li>
         <li class="nav-item">
-          <%= link_to '生徒一覧', teacher_students_path, class: 'nav-link text-dark' %>
+          <%= link_to '生徒一覧', teacher_students_path, class: 'nav-link text-dark btn' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'マイページ', teacher_top_path, class: 'nav-link text-dark' %>
+          <%= link_to 'マイページ', teacher_top_path, class: 'nav-link text-dark btn' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'シフト提出', teacher_shifts_path, class: 'nav-link text-dark btn' %>
         </li>
         <% else %>
         <li class="nav-item">
-          <%= link_to "講師ログイン", new_teacher_session_path, class: 'nav-link text-dark' %>
+          <%= link_to "講師ログイン", new_teacher_session_path, class: 'nav-link text-dark btn' %>
         </li>
         <% end %>
         </ul>

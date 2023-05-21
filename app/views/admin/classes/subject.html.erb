@@ -1,0 +1,36 @@
+<%= render "admin/shared/header" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+    <%= form_with model: @subject, url: admin_subjects_path do |f| %>
+      <%= f.label :name, "教科名" %>
+      <%= f.text_field :name %> <br>
+      <%= f.label :grade, "学年"%>
+      <%= f.select :grade, Subject.grades.keys.map {|k| [I18n.t("enums.subject.grade.#{k}"), k]} %><br>
+      <%= f.submit "作成" , class: "btn btn-success" %>
+    <% end %>
+    </div>
+    <table class="table col-md-8">
+      <thead>
+        <tr>
+          <th>教科名</th>
+          <th>学年</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @subjects.each do |subject| %>
+          <tr>
+            <td><%= subject.name %></td>
+            <td><%= subject.grade_i18n %></td>
+            <td><%= link_to "削除", admin_subject_destroy_path(subject),method: :delete, class: "btn btn-danger" %></td>
+          </tr>
+          <% end %>
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+

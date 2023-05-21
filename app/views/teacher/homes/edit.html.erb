@@ -1,0 +1,32 @@
+<%= render "teacher/shared/header" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+    <%= form_with model: @subject, url: teacher_homes_subject_path do |f| %>
+      <%= f.label :subject_id, "教科"%>
+      <%= f.collection_select :subject_id, Subject.all, :id, :name_grade %><br>
+      <%= f.submit "作成" , class: "btn btn-success" %>
+    <% end %>
+    </div>
+    <table class="table col-md-8">
+      <thead>
+        <tr>
+          <th>教科名</th>
+          <th>学年</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @subjects.each do |subject| %>
+          <tr>
+            <td><%= subject.name %></td>
+            <td><%= subject.grade_i18n %></td>
+            <td><%= link_to "削除", teacher_home_destroy_path(subject),method: :delete, class: "btn btn-danger" %></td>
+          </tr>
+          <% end %>
+      </tbody>
+
+    </table>
+  </div>
+</div>
