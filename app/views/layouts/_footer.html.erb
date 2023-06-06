@@ -1,21 +1,38 @@
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container">
     <div class="row no-gutters">
-      <div class="col-md-4">
+      <div class="col-md-3">
+        <%= link_to root_path do %>
         <p>BorderFree</p>
         <%#= image_tag('logo-white.png') %>
+        <% end %>
       </div>
-      <div class="col-md-8">
-        <h6 class="text-white mt-2 mb-3">Link</h6>
+      <div class="col-md-3">
+        <h5 class="text-white mt-2 mb-3">私たちについて</h5>
         <ul class="p-0 list-unstyled">
-          <li>
-            <a href="" title="About" class="text-white-50">会社概要</a>
-          </li>
-          <li>
-            <a href="" title="License informations" class="text-white-50">プライバシーポリシー</a>
-          </li>
+          <li><%= link_to "BorderFreeとは", about_path, class: "text-white" %></li>
+          <li><%= link_to "教室について", outline_path, class: "text-white" %></li>
+          <li><%= link_to "団体概要", outline_path, class: "text-white" %></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5 class="text-white mt-2 mb-3">サポート</h5>
+        <ul class="p-0 list-unstyled">
+          <li><%= link_to "ご寄付・ボランティア", support_path, class: "text-white" %></li>
+          <li><%= link_to "事業", outline_path, class: "text-white" %></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5 class="text-white mt-2 mb-3">ログイン</h5>
+        <ul class="p-0 list-unstyled">
+          <li><%= link_to "生徒ログイン", new_student_session_path, class: "text-white" %></li>
+          <li><%= link_to "講師ログイン", new_teacher_session_path, class: "text-white" %></li>
+          <li><%= link_to "管理者ログイン", new_admin_session_path, class: "text-white" %></li>
         </ul>
       </div>
     </div>
+  </div>
+  <div class="text-white text-center">
+    Copyright © 特定非営利活動法人 BorderFree All rights reserved.
   </div>
 </footer>
