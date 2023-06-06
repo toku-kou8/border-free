@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   scope module: :public do
     resources :teachers, only:[:index, :show]
+    get '/about' => 'homes#about', as: 'about'
+    get '/about/outline' => 'homes#show', as: 'outline'
+    get '/social' =>'homes#social', as: 'social'
+    get '/support' => 'homes#support', as: 'support'
   end
 
   namespace :teacher do
@@ -48,7 +52,7 @@ Rails.application.routes.draw do
     get 'mypage' => 'homes#index', as: 'show'
     get 'edit' => 'homes#edit', as: 'edit'
     patch 'students' => 'homes#update', as: 'update'
-    resources :reservations, only:[:index, :create, :update]
+    resources :reservations, only:[:index, :create, :update, :destroy]
     resources :results, only: [:index, :new, :create, :edit, :update]
     resources :classes, only: [:index, :show, :create, :update]
   end
