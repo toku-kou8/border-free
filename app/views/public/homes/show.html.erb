@@ -1,0 +1,65 @@
+<%= render "layouts/header" %>
+<h1 class="text-center mt-5">団体概要</h1>
+<% breadcrumb :outline %>
+<%= breadcrumbs separator: " &rsaquo; ", class: "ml-5" %>
+<div class="container">
+  <div class="row">
+    <table class="table col-md-6 offset-md-3">
+      <tbody>
+        <tr>
+          <th>名称</th>
+          <td>BorderFree</td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>2022年9月11日</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>東京都</td>
+        </tr>
+        <tr>
+          <th>お問い合わせ</th>
+          <td>TEL：03-0000-0000　／　Mail：aa@aa</td>
+        </tr>
+        <tr>
+          <th>代表者</th>
+          <td>名前</td>
+        </tr>
+        <tr>
+          <th>アクセス</th>
+          <td>場所</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div id='map' class="col-md-6 offset-md-3 mb-5"></div>
+
+    <style>
+    #map {
+      height: 300px;
+      width: 300px;
+    }
+    </style>
+
+    <script>
+    let map
+
+    function initMap(){
+      geocoder = new google.maps.Geocoder()
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 35.7098407, lng:139.72313},
+        zoom: 15,
+      });
+
+      marker = new google.maps.Marker({
+        position:  {lat: 35.7098407, lng:139.72313},
+        map: map
+      });
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
+  </div>
+</div>

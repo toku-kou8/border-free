@@ -1,17 +1,42 @@
 <%= render "layouts/header" %>
-<h1>Topページ</h1>
-<div class="container">
+<h1 class="text-center">BorderFree</h1>
+<% breadcrumb :root %>
+<%= breadcrumbs separator: " &rsaquo; ", class: "ml-5" %>
+<div class="container" style="height:1000px;">
     <div class="row">
-        <h3>supporters</h3>
-        <p>サポーター企業の皆様</p>
+        <ul class="sliders">
+          <li><img src="assets/greenade.jpg" alt="" width="300"></li>
+          <li><img src="assets/kelu.jpg" alt="" width="300"></li>
+          <li><img src="assets/tama.jpg" alt="" width="300"></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+            <h3>supporters</h3>
+            <h6 class="mt-3">協賛企業の皆様</h6>
+            <div class="row ">
+                <div>
+                    <img src="assets/greenade.jpg" alt="" width="200">
+                    <p>グリナード永山様</p>
+                </div>
+                <div class="ml-5">
+                    <img src="assets/kelu.jpg" alt="" width="200">
+                    <p>ケル株式会社様</p>
+                </div>
+                <div class="ml-5">
+                    <img src="assets/tama.jpg" alt="" width="200">
+                    <p>多摩市様</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div>
         <div class="row">
             <div class="col-md-4">
-                
+
             </div>
             <div class="col-md-4">
-                
+
             </div>
         </div>
     </div>
