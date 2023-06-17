@@ -1,12 +1,10 @@
-<%= render "teacher/shared/header" %>
+<%= render "teachers/shared/header" %>
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
 <p id="notice"><%= notice %></p>
 
 <div class="toppage">
-  <h2 class="top">シフト提出 （<%= current_teacher.name %>）</h2>
-
+  <h2 class="ml-5">シフト提出 （<%= current_teacher.name %>）</h2>
   <br>
-
   <div class="row">
     <div class="col-md-3 ml-3">
     	<div class="schedule"></div>
