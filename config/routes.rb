@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get '/about/outline' => 'homes#show', as: 'outline'
     get '/social' =>'homes#social', as: 'social'
     get '/support' => 'homes#support', as: 'support'
+    get '/classes' => 'homes#classes', as: 'classes'
   end
   scope module: :teacher do
     # devise_for :teachers, controllers: {
