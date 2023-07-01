@@ -25,16 +25,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_out_path_for(resource)
-    case resource
-      when Teacher
-        root_path
-      when Student
-        root_path
-      when Admin
-        root_path
-    end
-  end
+  # def after_sign_out_path_for(resource)
+  #   case resource
+  #     when Teacher
+  #       root_path
+  #     when Student
+  #       root_path
+  #     when Admin
+  #       root_path
+  #   end
+  # end
 
   def configure_permitted_parameters
     if resource_class == Teacher

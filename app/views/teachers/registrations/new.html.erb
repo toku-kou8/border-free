@@ -1,7 +1,7 @@
-<%= render "students/shared/header" %>
-<div class="container" style="height:100%;">
+<%= render "teachers/shared/header" %>
+<div class="container">
   <div class="row">
-    <h2 class="mt-5 mx-auto">生徒登録画面</h2>
+    <h2 class="mt-5 mx-auto">講師登録画面</h2>
   </div>
   <div class="row">
     <div class="mt-4 mx-auto">
@@ -22,19 +22,19 @@
           </tr>
           <tr>
             <td><%= f.label :電話番号, class: "mr-5" %></td>
-            <td><%= f.text_field :phone_number,autocomplete: "phone_number" %></td>
+            <td><%#= f.text_field :phone_number,autocomplete: "phone_number" %></td>
           </tr>
           <tr>
             <td><%= f.label :生年月日 , class: "mr-5"%></td>
             <td><%= f.date_field :birth, autocomplete: "birth" %></td>
           </tr>
           <tr>
-            <td><%= f.label :保護者氏名, class: "mr-5" %></td>
-            <td><%= f.text_field :parent_name, autocomplete: "parent_name" %></td>
+            <td><%= f.label :学校名, class: "mr-5" %></td>
+            <td><%= f.text_field :school, autocomplete: "school", placeholder: "～大学" %></td>
           </tr>
           <tr>
-            <td><%= f.label :保護者氏名（カナ）, class: "mr-5" %></td>
-            <td><%= f.text_field :parent_name_kana, autocomplete: "parent_name_kana" %></td>
+            <td><%= f.label :学科, class: "mr-5" %></td>
+            <td><%= f.text_field :faculty, autocomplete: "faculty", placeholder: "～学部" %></td>
           </tr>
           <tr>
             <td><%= f.label :パスワード %>
@@ -57,3 +57,4 @@
     </div>
   </div>
 </div>
+<%#= render "teachers/shared/links" %>

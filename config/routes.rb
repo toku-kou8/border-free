@@ -25,8 +25,15 @@ Rails.application.routes.draw do
     get '/about/outline' => 'homes#show', as: 'outline'
     get '/social' =>'homes#social', as: 'social'
     get '/support' => 'homes#support', as: 'support'
+    get '/classes' => 'homes#classes', as: 'classes'
   end
-
+  scope module: :teacher do
+    # devise_for :teachers, controllers: {
+    #     sessions: 'teacher/sessions',
+    #     regisrations: 'teacher/regisrations',
+    #     passwords: 'teacher/passwords'
+    #   }
+  end
   namespace :teacher do
     get 'mypage' => 'homes#top', as: 'top'
     get 'subject' => 'homes#edit', as: 'home_edit'
@@ -38,6 +45,13 @@ Rails.application.routes.draw do
     resources :classes, only: [:index, :show]
   end
 
+  scope module: :admin do
+    # devise_for :admins , controllers: {
+    #   sessions: 'admin/sessions',
+    #   regisrations: 'admin/regisrations',
+    #   passwords: 'admin/passwords'
+    # }
+  end
   namespace :admin do
     resources :students, only:[:index, :show]
     resources :teachers, only:[:index, :show]
@@ -48,6 +62,13 @@ Rails.application.routes.draw do
     delete 'classes/subject/:id' => 'classes#destory', as: 'subject_destroy'
   end
 
+  scope module: :student do
+    # devise_for :students, controllers: {
+    #   sessions: 'student/sessions',
+    #   regisrations: 'student/regisrations',
+    #   passwords: 'student/passwords'
+    # }
+  end
   namespace :student do
     get 'mypage' => 'homes#index', as: 'show'
     get 'edit' => 'homes#edit', as: 'edit'

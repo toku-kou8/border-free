@@ -21,6 +21,10 @@ crumb :social do
   link "協賛企業", social_path
   parent :root
 end
+crumb :classes do
+  link "教室について", classes_path
+  parent :root
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
