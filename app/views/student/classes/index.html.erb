@@ -1,0 +1,48 @@
+<%= render "students/shared/header" %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<p id="notice"><%= notice %></p>
+
+<div class="container" style="height: 1000px;">
+  <div class="text-center mt-3">
+    <h1 class="text-center mt-5 undertitle">授業履歴</h1>
+  </div>
+  <div class="d-flex">
+    <div class="col-md-5 offset-md-1">
+    	<div class="schedule"><h3>授業履歴</h3></div>
+    	<table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>開始時間</th>
+            <th>先生</th>
+            <th>教科</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody class = "scroll">
+          <% @lessons.each do |lesson| %>
+            <tr>
+              <td><%= lesson.start_time.strftime("%-m/%-d")%>(<%= week[lesson.start_time.wday] %>) <%= lesson.start_time.strftime("%H:%M~")%></td>
+              <td><%= lesson.teacher.name %></td>
+              <td><%= lesson.subject.name_grade %></td>
+              <td><%= link_to "詳細", student_class_path(lesson) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4 offset-md-1">
+    	<div class="schedule"><h3>授業時間</h3></div>
+    	<table class="table">
+        <tr>
+          <th>今月の授業時間</th>
+          <td><%= @lessons.where("start_time >= ?", Date.today.beginning_of_month).where("start_time <= ?",Date.current).count*1.5 %>時間</td>
+        </tr>
+        <tr>
+          <th>総授業時間</th>
+          <td><%= @lessons.count * 1.5 %>時間</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

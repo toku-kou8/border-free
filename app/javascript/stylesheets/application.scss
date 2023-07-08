@@ -119,6 +119,7 @@
   border-radius: 2px;
 }
 
+/*見出し*/
 .heading07 {
 	position: relative;
 	padding-top: 50px;
@@ -142,4 +143,39 @@
 	font-weight: 400;
 	font-family: luxus-brut, cursive;
 	font-style: italic;
+}
+
+/* セロハンボックス*/
+.sample_box11 {
+   width: 100%;/* 紙の横幅 100%にすると全幅表示に */
+   padding: 15px;
+   margin: 2em auto;
+   background: #f7f092;/* 紙の色 */
+   color: #000;/* 文字色 */
+   box-shadow: 4px 4px 4px rgba(0,0,0,0.03);
+  // transform:rotate(2deg);
+   word-break: break-all;
+}
+.sample_box11 p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+}
+.sample_box11_tape {
+    width: 50%;
+    height: 35px;
+    margin: -25px auto 0;
+    background: #989898;
+    // transform: rotate(-3deg);
+    opacity: 0.1;
+}
+.sample_box11_title {
+    text-align: center;
+    font-size: 1.3em!important;
+    margin-top: 10px!important;
+}
+.sample_box11_subtitle {
+    text-align: center;
+    font-size: 0.7em!important;
+    margin-bottom: 1em!important;
 }
