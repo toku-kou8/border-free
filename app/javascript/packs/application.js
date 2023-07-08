@@ -16,7 +16,7 @@ import '@fortawesome/fontawesome-free/js/all'
 require("./slick")
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
 
 /*global jQuery */
@@ -34,5 +34,19 @@ jQuery(document).on("turbolinks:load", function() {
       "#user_address_city"   : "%4%5",
       "#user_address_street" : "%6%7"
     }
+  });
+});
+
+$(function () {
+  $(window).scroll(function () {
+    const windowHeight = $(window).height();
+    const scroll = $(window).scrollTop();
+
+    $('.element').each(function () {
+      const targetPosition = $(this).offset().top;
+      if (scroll > targetPosition - windowHeight + 100) {
+        $(this).addClass("is-fadein");
+      }
+    });
   });
 });

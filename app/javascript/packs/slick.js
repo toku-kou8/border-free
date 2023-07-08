@@ -9,7 +9,7 @@ $(function () {
     autoplay: true,
     autoplaySpeed: 2000,
     dots: true,
-    // infinite: true,
+    infinite: true,
     // speed: 300,
     slidesToShow: 1,
     // adaptiveHeight: true

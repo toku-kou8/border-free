@@ -1,1 +1,59 @@
 <%= render "students/shared/header" %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<p id="notice"><%= notice %></p>
+
+<div class="toppage" style="height: 1000px;">
+  <div class="text-center mt-3">
+    <h1 class="text-center mt-5 undertitle">生徒マイページ</h1>
+  </div>
+  <br>
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-1">
+      <%= month_calendar events: @lessons do |date, lessons| %>
+        <%= date.day %>
+
+        <% lessons.each do |lesson| %>
+          <div>
+            <%= lesson.start_time.strftime("%H:%M~") %>
+            <%= lesson.teacher.name %><br>
+            <%= lesson.subject.name_grade %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <div class="m-5">
+        <%= link_to "授業を予約する", student_reservations_path, class: 'btn btn-success btn-lg' %>
+      </div>
+      <div class="m-5">
+        <%= link_to "過去の授業を見る", student_reservations_path, class: 'btn btn-info btn-lg' %>
+      </div>
+    	<div class="schedule"><h3>授業予定</h3></div>
+    	<table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>開始時間</th>
+            <th>先生</th>
+            <th>教科</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody class = "scroll">
+          <% @lessons.each do |lesson| %>
+            <tr>
+              <td><%= lesson.start_time.strftime("%-m/%-d")%>(<%= week[lesson.start_time.wday] %>) <%= lesson.start_time.strftime("%H:%M~")%></td>
+              <td><%= lesson.teacher.name %></td>
+              <td><%= lesson.subject.name_grade %></td>
+              <td>
+                <% if lesson.start_time >= Date.current.since(5.days) %>
+                <%= link_to "削除", student_reservation_path(lesson), method: :delete,class: "text-danger", data: {confirm: "本当に削除しますか？"} %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

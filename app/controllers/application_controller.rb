@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
       when Student
         student_show_path
       when Admin
-        root_path
+        admin_shifts_path
     end
   end
 
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
       when Student
         student_show_path
       when Admin
-        root_path
+        admin_shifts_path
     end
   end
 

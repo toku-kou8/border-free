@@ -1,6 +1,8 @@
 <%= render "teachers/shared/header" %>
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
-<h3>マイページ</h3>
+<div class="text-center mt-3">
+    <h1 class="text-center mt-5 undertitle">マイページ</h1>
+  </div>
 <div class="row">
   <table class="table col-md-3 ml-5 mr-5">
     <thead class="thead-light">
@@ -9,11 +11,10 @@
         <th></th>
       </tr>
     </thead>
-
     <tbody class = "scroll">
       <% @shifts.each do |shift| %>
         <tr>
-          <td><%= shift.start_time.strftime("%d")%>(<%= week[shift.start_time.wday] %>) <%= shift.start_time.strftime("%H:%M ~")%></td>
+          <td><%= shift.start_time.strftime("%-m/%-d")%>(<%= week[shift.start_time.wday] %>) <%= shift.start_time.strftime("%H:%M ~")%></td>
           <td><%= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-dark" %></td>
         </tr>
       <% end %>

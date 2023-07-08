@@ -15,6 +15,7 @@ class Student::ReservationsController < ApplicationController
       redirect_to student_reservations_path
     else
       @shifts = Shift.all.where("start_time >= ?",Date.current << 2).where("status == ?", 0).order(start_time: :asc)
+      @lessons = current_student.lessons.where("start_time >= ?",Date.current << 2).where("status == ?", 0).order(start_time: :asc)
       render :index
     end
   end

@@ -15,7 +15,7 @@
 }
 
 .scroll{
-  // width: 100px;
+  width: 100px;
   height: 80px;
   overflow: scroll;
   background: #fde0df;
@@ -26,6 +26,120 @@
   margin: 0 auto;
 }
 
+.margin-top {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+.box8{
+    padding: 0.5em 1em;
+    margin: 2.5em 0;
+    background: #f4f4f4;
+    border-left: solid 6px #5bb7ae;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+}
+.box8 p {
+    margin: 0;
+    padding: 0;
+}
+
+.box30 {
+    margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.box30 .box-title {
+    font-size: 1.2em;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.box30 p {
+    padding: 15px 20px;
+    margin: 0;
+}
+
+.maru {
+  position: relative;
+  color: #333;
+  margin: 47px 0;
+  text-shadow: 0 0 2px white;
+}
+.maru:before {
+  content: "";
+  position: absolute;
+  background: #a9e1ff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: 50%;
+  border: dashed 1px white;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  box-shadow: 0px 0px 0px 5px #a9e1ff;
+}
 .text-decoration-underline{
   text-decoration: line-through;
+}
+
+.element {
+  /* 最初は非表示 */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: opacity 2s, visibility 2s, transform 2s;
+}
+/* フェードイン時に入るクラス */
+.is-fadein {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.undertitle {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+.undertitle:before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  display: inline-block;
+  width: 60px;
+  height: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: black;
+  border-radius: 2px;
+}
+
+.heading07 {
+	position: relative;
+	padding-top: 50px;
+	padding-left: 30px;
+	font-size: 26px;
+}
+
+.heading07 span {
+	position: relative;
+	z-index: 2;
+}
+
+.heading07::before {
+	content: attr(data-en);
+	position: absolute;
+	transform: rotate(-5deg);
+	top: -30px;
+	left: 0;
+	color: rgba(224,66,114,0.6);
+	font-size: 80px;
+	font-weight: 400;
+	font-family: luxus-brut, cursive;
+	font-style: italic;
 }

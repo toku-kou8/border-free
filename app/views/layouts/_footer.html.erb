@@ -1,16 +1,16 @@
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container">
     <div class="row no-gutters">
-      <div class="col-md-3">
+      <div class="col-md-3 mt-3">
         <%= link_to root_path do %>
-        <p>BorderFree</p>
-        <%#= image_tag('logo-white.png') %>
+        <%#= image_tag('logo.png') %>
+        <img src="assets/logo.jpg" alt="BORDER FREE", width="100">
         <% end %>
       </div>
       <div class="col-md-3">
         <h5 class="text-white mt-2 mb-3">私たちについて</h5>
         <ul class="p-0 list-unstyled">
-          <li><%= link_to "BorderFreeとは", about_path, class: "text-white" %></li>
+          <li><%= link_to "BORDER FREEとは", about_path, class: "text-white" %></li>
           <li><%= link_to "教室について", classes_path, class: "text-white" %></li>
           <li><%= link_to "団体概要", outline_path, class: "text-white" %></li>
         </ul>
@@ -34,6 +34,6 @@
     </div>
   </div>
   <div class="text-white text-center">
-    Copyright © 特定非営利活動法人 BorderFree All rights reserved.
+    Copyright © 特定非営利活動法人 BORDER FREE All rights reserved.
   </div>
 </footer>

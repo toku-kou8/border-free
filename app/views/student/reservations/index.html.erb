@@ -2,13 +2,13 @@
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
 <p id="notice"><%= notice %></p>
 
-<div class="toppage">
-  <h2 class="top">授業予約</h2>
-
+<div class="toppage" style="height: 1000px;">
+  <div class="text-center mt-3">
+    <h1 class="text-center mt-5 undertitle">授業予約</h1>
+  </div>
   <br>
-
   <div class="row">
-    <div class="col-md-3 ml-3">
+    <div class="col-md-4 ml-3">
     	<div class="schedule"></div>
     	<table class="table">
         <thead class="thead-light">
@@ -23,7 +23,7 @@
         <tbody class = "scroll">
           <% @lessons.each do |lesson| %>
             <tr>
-              <td><%= lesson.start_time.strftime("%d")%>(<%= week[lesson.start_time.wday] %>) <%= lesson.start_time.strftime("%H:%M ~")%></td>
+              <td><%= lesson.start_time.strftime("%-m/%-d")%>(<%= week[lesson.start_time.wday] %>) <%= lesson.start_time.strftime("%H:%M~")%></td>
               <td><%= lesson.teacher.name %></td>
               <td><%= lesson.subject.name_grade %></td>
               <td><%= link_to "削除", student_reservation_path(lesson), method: :delete,class: "text-danger" %></td>
@@ -33,24 +33,24 @@
       </table>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-7">
     <%= week_calendar events: @shifts do |date, shifts| %>
-      <div class="mb-3"><%= date.day %></div>
-      <% shifts.each do |shift| %>
-        <div>
+      <div class="mb-2"><%= date.day %></div>
+        <% shifts.each do |shift| %>
+          <div class="mb-2 border border-secondary p-1 rounded">
             <%= shift.timetables(shift.timetable) %>限
-            <%= shift.start_time.strftime("%H:%M~") %> <br>
+            <%= shift.start_time.strftime("%H:%M~") %><br>
             <%= shift.teacher.name %>先生
           <%= form_with model: @lesson, url: student_reservations_path(shift_id: shift.id) do |f| %>
             <%= f.hidden_field :teacher_id, :value => shift.teacher.id %>
-            <%= f.collection_select :subject_id, shift.teacher.subjects, :id, :name_grade %>
+            <%= f.collection_select :subject_id, shift.teacher.subjects, :id, :name_grade,{ include_blank: "科目選択" } %>
             <%= f.hidden_field :start_time, :value => shift.start_time %>
             <%= f.hidden_field :timetable, :value => shift.timetable %>
             <%= f.hidden_field :shift_id, :value => shift.id %>
-            <%= f.submit "予約", class: "btn btn-success" %>
+            <%= f.submit "予約", class: "btn btn-success btn-sm" %>
           <% end %>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
     <% end %>
     </div>
   </div>
