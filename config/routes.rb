@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'students/index'
+    get 'students/show'
+  end
+  namespace :admin do
+    get 'teachers/index'
+    get 'teachers/show'
+  end
   root "public/homes#top"
   # devise_for :teacher, controllers: {
   #   sessions: 'teacher/sessions',
