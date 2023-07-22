@@ -1,2 +1,79 @@
+<<<<<<< HEAD
 <h1>Admin::Teachers#show</h1>
 <p>Find me in app/views/admin/teachers/show.html.erb</p>
+=======
+<%= render "admins/shared/header" %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<p id="notice"><%= notice %></p>
+
+<div class="text-center mt-3">
+  <h1 class="text-center undertitle"><%= @teacher.name %></h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 offset-md-1">
+      <div class="schedule"><h3>基本情報</h3></div>
+      <table class="table">
+        <tr>
+          <th>id</th>
+          <td><%= @teacher.id %></td>
+        </tr>
+        <tr>
+          <th>名前</th>
+          <td><%= @teacher.name %></td>
+        </tr>
+        <tr>
+          <th>生年月日</th>
+          <td><%= @teacher.birth %></td>
+        </tr>
+        <tr>
+          <th>大学</th>
+          <td><%= @teacher.school %></td>
+        </tr>
+        <tr>
+          <th>担当科目</th>
+          <td>
+            <% @teacher.subjects.each do |subject| %>
+            <%= subject.name_grade %>
+            <% end %><br>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <% shifts_time = @shift_time.where("start_time >= ?", Date.today.beginning_of_month) %>
+    <div class="col-md-5 offset-md-1 mb-5">
+      <div class="schedule"><h3>今月の稼働時間</h3></div>
+      <table class="table mb-5">
+        <tr>
+          <th>シフト予定時間</th>
+          <td><%= shifts_time.count*1.5 %>時間</td>
+        </tr>
+        <tr>
+          <th>現在のシフト時間</th>
+          <td><%= shifts_time.where("start_time <= ?", Date.current).count*1.5 %>時間</td>
+        </tr>
+        <tr>
+          <th>授業予定時間</th>
+          <td><%= shifts_time.where("status == 2").count * 1.5 %>時間</td>
+        </tr>
+
+        <tr>
+          <th>現在の授業時間</th>
+          <td><%= shifts_time.where("start_time <= ?", Date.current).where("status == 2").count * 1.5 %>時間</td>
+        </tr>
+      </table>
+      <div class="schedule"><h3>先月の稼働時間</h3></div>
+      <table class="table">
+        <tr>
+          <th>現在のシフト時間</th>
+          <td><%= @shift_time.where("start_time <= ?", Date.today.last_month.end_of_month).count*1.5 %>時間</td>
+        </tr>
+        <tr>
+          <th>現在の授業時間</th>
+          <td><%= @shift_time.where("start_time <= ?", Date.today.last_month.end_of_month).where("status == 2").count * 1.5 %>時間</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+>>>>>>> origin/develop

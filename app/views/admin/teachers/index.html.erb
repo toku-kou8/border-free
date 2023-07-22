@@ -2,6 +2,7 @@
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
 <p id="notice"><%= notice %></p>
 
+<<<<<<< HEAD
 <div class="toppage">
   <div class="text-center mt-3">
     <h1 class="text-center mt-5 undertitle">講師一覧</h1>
@@ -14,24 +15,55 @@
     	<div class="schedule"></div>
     </div>
 
+=======
+<div class="text-center mt-3">
+  <h1 class="text-center undertitle">講師一覧</h1>
+</div>
+<div class="container">
+  <div class="row">
+>>>>>>> origin/develop
     <div class="col-md-10 offset-md-1">
       <table class="table">
         <thead>
           <tr>
+<<<<<<< HEAD
             <th>名前</th>
             <th>生年月日</th>
             <th>大学</th>
             <th>今月の稼働時間</th>
+=======
+            <th>id</th>
+            <th>名前</th>
+            <th>学年</th>
+            <th>大学</th>
+            <th>担当科目</th>
+            <th></th>
+>>>>>>> origin/develop
           </tr>
         </thead>
         <tbody>
           <% @teachers.each do |teacher| %>
+<<<<<<< HEAD
             <tr>
               <td><%= teacher.name %></td>
               <td><%= teacher.birth %></td>
               <td><%= teacher.school %></td>
               <td><%= </td>
             </tr>
+=======
+          <tr>
+            <td><%= teacher.id %></td>
+            <td><%= teacher.name %></td>
+            <td><%= teacher.birth %></td>
+            <td><%= teacher.school %></td>
+            <td>
+              <% teacher.subjects.each do |subject| %>
+              <%= subject.name_grade %>
+              <% end %><br>
+            </td>
+            <td><%= link_to "詳細", admin_teacher_path(teacher) %></td>
+          </tr>
+>>>>>>> origin/develop
           <% end %>
         </tbody>
       </table>

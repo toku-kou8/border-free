@@ -2,7 +2,7 @@ class Student::ReservationsController < ApplicationController
   before_action :authenticate_student!
   def index
     @shifts = Shift.all.where("start_time >= ?",Date.current << 2).where("status == ?", 0).order(start_time: :asc)
-    @lessons = current_student.lessons.where("start_time >= ?",Date.current << 2).where("status == ?", 0).order(start_time: :asc)
+    @lessons = current_student.lessons.where("start_time >= ?",Date.current).where("status == ?", 0).order(start_time: :asc)
     @lesson = Lesson.new
   end
 
