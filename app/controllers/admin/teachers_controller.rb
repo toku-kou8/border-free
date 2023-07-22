@@ -5,5 +5,6 @@ class Admin::TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
+    @shift_time = @teacher.shifts
   end
 end

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<h1>Admin::Teachers#show</h1>
-<p>Find me in app/views/admin/teachers/show.html.erb</p>
-=======
 <%= render "admins/shared/header" %>
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
 <p id="notice"><%= notice %></p>
@@ -31,12 +27,20 @@
           <td><%= @teacher.school %></td>
         </tr>
         <tr>
+          <th>学部</th>
+          <td><%= @teacher.faculty %></td>
+        </tr>
+        <tr>
           <th>担当科目</th>
           <td>
             <% @teacher.subjects.each do |subject| %>
             <%= subject.name_grade %>
             <% end %><br>
           </td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @teacher.email %></td>
         </tr>
       </table>
     </div>
@@ -76,4 +80,3 @@
     </div>
   </div>
 </div>
->>>>>>> origin/develop

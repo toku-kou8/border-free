@@ -2,50 +2,24 @@
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
 <p id="notice"><%= notice %></p>
 
-<<<<<<< HEAD
-<div class="toppage">
-  <div class="text-center mt-3">
-    <h1 class="text-center mt-5 undertitle">生徒一覧</h1>
-  </div>
-
-  <br>
-
-  <div class="row">
-    <div class="col-md-3 ml-3">
-    	<div class="schedule"></div>
-    </div>
-
-=======
 <div class="text-center mt-3">
   <h1 class="text-center undertitle">生徒一覧</h1>
 </div>
 <div class="container">
   <div class="row">
->>>>>>> origin/develop
     <div class="col-md-10 offset-md-1">
       <table class="table">
         <thead>
           <tr>
-<<<<<<< HEAD
-            <th>名前</th>
-            <th>生年月日</th>
-=======
             <th>id</th>
             <th>名前</th>
             <th>学年</th>
             <th>学校名</th>
->>>>>>> origin/develop
             <th></th>
           </tr>
         </thead>
         <tbody>
           <% @students.each do |student| %>
-<<<<<<< HEAD
-            <tr>
-              <td><%= student.name %></td>
-              <td><%= student.birth %></td>
-            </tr>
-=======
           <tr>
             <td><%= student.id %></td>
             <td><%= student.name %></td>
@@ -53,7 +27,6 @@
             <td><%= student.school %></td>
             <td><%= link_to "詳細", admin_student_path(student) %></td>
           </tr>
->>>>>>> origin/develop
           <% end %>
         </tbody>
       </table>

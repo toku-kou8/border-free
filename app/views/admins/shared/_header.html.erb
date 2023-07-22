@@ -12,17 +12,10 @@
           <%= link_to '管理者ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
-<<<<<<< HEAD
           <%= link_to "講師一覧", admin_teachers_path, class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
           <%= link_to "生徒一覧", admin_students_path, class: 'nav-link text-dark' %>
-=======
-            <%= link_to "講師一覧", admin_teachers_path, class: 'nav-link text-dark' %>
-        </li>
-        <li class="nav-item">
-            <%= link_to "生徒一覧", admin_students_path, class: 'nav-link text-dark' %>
->>>>>>> origin/develop
         </li>
           <% if student_signed_in? %>
           <li class="nav-item">

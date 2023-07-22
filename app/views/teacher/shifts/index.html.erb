@@ -1,7 +1,7 @@
 <%= render "teachers/shared/header" %>
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<% now = Date.current %>
 <p id="notice"><%= notice %></p>
-
 <div class="toppage">
   <h2 class="ml-5">シフト提出 （<%= current_teacher.name %>）</h2>
   <br>
@@ -17,7 +17,7 @@
         </thead>
 
         <tbody class = "scroll">
-          <% @shifts.each do |shift| %>
+          <% @shifts.where("start_time >= ?", now).each do |shift| %>
             <tr>
               <td><%= shift.start_time.strftime("%-m/%-d")%>(<%= week[shift.start_time.wday] %>) <%= shift.start_time.strftime("%H:%M ~")%></td>
               <td><%= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-dark" %></td>
@@ -42,8 +42,6 @@
       </div>
     </div>
     <br>
-
-
     <br>
     <div class="col-md-8">
     <%= month_calendar events: @shifts do |date, shifts| %>
@@ -53,11 +51,15 @@
         <div>
           <% if shift.status == 0 %>
             <%= shift.start_time.strftime("%H:%M~") %>
-            <%= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-danger" %>
+            <% if shift.start_time >= now.since(5.day) %>
+              <%= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-danger" %>
+            <% end %>
           <% elsif shift.status == 1 %>
             <nobr class="text-decoration-underline mr-2">
               <%= shift.start_time.strftime("%H:%M~") %>
             </nobr>
+          <% elsif shift.status == 2 %>
+            授業予約あり
           <% end %>
         </div>
       <% end %>

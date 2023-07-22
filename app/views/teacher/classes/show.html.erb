@@ -1,0 +1,41 @@
+<%= render "teachers/shared/header" %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<p id="notice"><%= notice %></p>
+
+<div class="text-center mt-3">
+  <h1 class="text-center undertitle">授業詳細</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-1">
+      <div class="schedule"><h3>基本情報</h3></div>
+      <table class="table">
+        <tr>
+          <th>授業id</th>
+          <td><%= @lesson.id %></td>
+        </tr>
+        <tr>
+          <th>授業日</th>
+          <td><%= @lesson.start_time.strftime("20%y/%m/%d %H:%M~") %></td>
+        </tr>
+        <tr>
+          <th>生徒氏名</th>
+          <td><%= @lesson.student.name %></td>
+        </tr>
+        <tr>
+          <th>科目</th>
+          <td><%= @lesson.subject.name %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-5 offset-md-1">
+      <div class="schedule"><h3>評価</h3></div>
+      <table class="table">
+        <tr>
+          <th>コメント</th>
+          <td><%= @lesson.id %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

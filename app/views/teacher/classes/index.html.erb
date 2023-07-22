@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="text-center mt-3">
-  <h1 class="text-center undertitle">生徒一覧</h1>
+  <h1 class="text-center undertitle">授業一覧</h1>
 </div>
 <div class="container">
   <div class="row">
@@ -12,20 +12,20 @@
         <thead>
           <tr>
             <th>id</th>
-            <th>名前</th>
-            <th>学年</th>
-            <th>学校名</th>
+            <th>授業日</th>
+            <th>生徒名</th>
+            <th>科目</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <% @students.each do |student| %>
+          <% @lessons.each do |lesson| %>
           <tr>
-            <td><%= student.id %></td>
-            <td><%= student.name %></td>
-            <td><%= student.birth %></td>
-            <td><%= student.school %></td>
-            <td><%= link_to "詳細", teacher_student_path(student) %></td>
+            <td><%= lesson.id %></td>
+            <td><%= lesson.start_time.strftime("%H:%M~") %></td>
+            <td><%= lesson.student.name %></td>
+            <td><%= lesson.subject.name %></td>
+            <td><%= link_to "詳細", teacher_class_path(lesson) %></td>
           </tr>
           <% end %>
         </tbody>
