@@ -16,7 +16,7 @@
           <div>
             <%= lesson.start_time.strftime("%H:%M~") %>
             <%= lesson.teacher.name %><br>
-            <%= lesson.subject.name_grade %>
+            <%= lesson.subject.name %>
           </div>
         <% end %>
       <% end %>
@@ -26,7 +26,7 @@
         <%= link_to "授業を予約する", student_reservations_path, class: 'btn btn-success btn-lg' %>
       </div>
       <div class="m-5">
-        <%= link_to "過去の授業を見る", student_reservations_path, class: 'btn btn-info btn-lg' %>
+        <%= link_to "過去の授業を見る", student_classes_path, class: 'btn btn-info btn-lg' %>
       </div>
     	<div class="schedule"><h3>授業予定</h3></div>
     	<table class="table">
@@ -40,11 +40,11 @@
         </thead>
 
         <tbody class = "scroll">
-          <% @lessons.each do |lesson| %>
+          <% @lessons.where("start_time >= ?", Date.current).each do |lesson| %>
             <tr>
               <td><%= lesson.start_time.strftime("%-m/%-d")%>(<%= week[lesson.start_time.wday] %>) <%= lesson.start_time.strftime("%H:%M~")%></td>
               <td><%= lesson.teacher.name %></td>
-              <td><%= lesson.subject.name_grade %></td>
+              <td><%= lesson.subject.name %></td>
               <td>
                 <% if lesson.start_time >= Date.current.since(5.days) %>
                 <%= link_to "削除", student_reservation_path(lesson), method: :delete,class: "text-danger", data: {confirm: "本当に削除しますか？"} %>

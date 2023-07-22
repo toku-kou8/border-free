@@ -20,16 +20,37 @@
       <% end %>
     </tbody>
   </table>
-  <div class="col-md-8 ml-2 mr-2">
-    <%= month_calendar events: @shifts do |date, shifts| %>
-      <%= date.day %>
+  <% shifts_time = @shifts.where("start_time >= ?", Date.today.beginning_of_month).where("start_time <= ?", Date.today.end_of_month) %>
+  <div class="col-md-4 ml-2 mr-2">
+    <div class="schedule"><h3>今月の稼働時間</h3></div>
+  	<table class="table">
+      <tr>
+        <th>シフト予定時間</th>
+        <td><%= shifts_time.count*1.5 %>時間</td>
+      </tr>
+      <tr>
+        <th>現在のシフト時間</th>
+        <td><%= shifts_time.where("start_time <= ?", Date.current).count*1.5 %>時間</td>
+      </tr>
+      <tr>
+        <th>授業予定時間</th>
+        <td><%= shifts_time.where("status == 2").count * 1.5 %>時間</td>
+      </tr>
 
-      <% shifts.each do |shift| %>
+      <tr>
+        <th>現在の授業時間</th>
+        <td><%= shifts_time.where("start_time <= ?", Date.current).where("status == 2").count * 1.5 %>時間</td>
+      </tr>
+    </table>
+  </div>
+    <%#= month_calendar events: @shifts do |date, shifts| %>
+      <%#= date.day %>
+
+      <%# shifts.each do |shift| %>
         <div>
-          <%= shift.start_time.strftime("%H:%M~") %>
-          <%= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-danger" %>
+          <%#= shift.start_time.strftime("%H:%M~") %>
+          <%#= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-danger" %>
         </div>
-      <% end %>
-    <% end %>
-    </div>
+      <%# end %>
+    <%# end %>
 </div>

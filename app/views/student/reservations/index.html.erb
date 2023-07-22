@@ -26,7 +26,11 @@
               <td><%= lesson.start_time.strftime("%-m/%-d")%>(<%= week[lesson.start_time.wday] %>) <%= lesson.start_time.strftime("%H:%M~")%></td>
               <td><%= lesson.teacher.name %></td>
               <td><%= lesson.subject.name_grade %></td>
-              <td><%= link_to "削除", student_reservation_path(lesson), method: :delete,class: "text-danger" %></td>
+              <td>
+                <% if lesson.start_time >= Date.current.since(5.days) %>
+                <%= link_to "削除", student_reservation_path(lesson), method: :delete,class: "text-danger", data: {confirm: "本当に削除しますか？"} %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
