@@ -3,7 +3,7 @@
 <% now = Date.current %>
 <p id="notice"><%= notice %></p>
 
-<div class="toppage">
+<div class="toppage" style="height: 800px;">
   <div class="text-center mt-3">
     <h1 class="text-center mt-5 undertitle">講師一覧</h1>
   </div>
@@ -22,8 +22,8 @@
             <th>名前</th>
             <th>生年月日</th>
             <th>大学</th>
-            <th>先月の稼働時間</th>
-            <th>今月の稼働予定</th>
+            <th><%= now.last_month.month %>月の稼働時間</th>
+            <th><%= now.month %>月の稼働予定</th>
           </tr>
         </thead>
         <tbody>

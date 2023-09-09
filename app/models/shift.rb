@@ -1,6 +1,6 @@
 class Shift < ApplicationRecord
   belongs_to :teacher
-
+  has_one :lesson
   def timetables(time)
     ans = time + 1
 

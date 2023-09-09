@@ -5,7 +5,8 @@ class Teacher::HomesController < ApplicationController
   end
 
   def edit
-    @subjects = current_teacher.subjects
+    @teacher = current_teacher
+    @subjects = @teacher.subjects
     @subject = SubjectTeacher.new
   end
 
@@ -29,9 +30,23 @@ class Teacher::HomesController < ApplicationController
     redirect_to teacher_home_edit_path
   end
 
+  def update
+    @teacher = current_teacher
+    if @teacher.update(teacher_params)
+      redirect_to teacher_top_path
+    else
+      @subjects = @teacher.subjects
+      @subject = SubjectTeacher.new
+      render :edit
+    end
+  end
   private
 
   def subject_teacher_params
     params.require(:subject_teacher).permit(:subject_id)
+  end
+
+  def teacher_params
+    params.require(:teacher).permit(:email, :name, :name_kana, :phone_number, :school, :faculty, :birth, :image)
   end
 end

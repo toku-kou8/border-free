@@ -33,6 +33,7 @@ class DeviseCreateTeachers < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
       t.string :name, null: false
       t.string :name_kana, null: false
+      t.string :phone_number
       t.string :school, null: false
       t.string :faculty, null: false
       t.text :introduction

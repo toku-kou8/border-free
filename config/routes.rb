@@ -36,13 +36,14 @@ Rails.application.routes.draw do
   end
   namespace :teacher do
     get 'mypage' => 'homes#top', as: 'top'
-    get 'subject' => 'homes#edit', as: 'home_edit'
+    # get 'subject' => 'homes#edit', as: 'home_edit'
+    resource :homes, only:[:edit, :update]
     post 'subject' => 'homes#create', as: 'homes_subject'
     delete 'subject/:id' => 'homes#destory', as: 'home_destroy'
     resources :students, only:[:index, :show]
     get 'students/result/:id' => 'students#result', as: 'result'
     resources :shifts, only: [:index, :create, :update, :destroy]
-    resources :classes, only: [:index, :show]
+    resources :classes, only: [:index, :show, :update]
   end
 
   scope module: :admin do

@@ -58,6 +58,9 @@ ActiveRecord::Schema.define(version: 2023_05_21_032337) do
     t.integer "subject_id", null: false
     t.integer "shift_id"
     t.integer "status", default: 0, null: false
+    t.text "student_comment"
+    t.text "teacher_comment"
+    t.integer "star"
     t.datetime "start_time", null: false
     t.integer "timetable", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -118,6 +121,7 @@ ActiveRecord::Schema.define(version: 2023_05_21_032337) do
     t.string "unconfirmed_email"
     t.string "name", null: false
     t.string "name_kana", null: false
+    t.string "phone_number"
     t.string "school", null: false
     t.string "faculty", null: false
     t.text "introduction"

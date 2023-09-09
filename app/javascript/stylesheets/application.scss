@@ -4,7 +4,26 @@
 .simple-calendar{
   .day{
     height: 80px;
+    width: 80px
   }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+  .current-month {}
+
+  .has-events {}
+
   .prev-month {
     background: #888;
   }
@@ -20,6 +39,18 @@
   overflow: scroll;
   background: #fde0df;
   overflow-x: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+ul{
+  padding-left:0;
+}
+
+li{
+  list-style:none;
 }
 
 .top{
@@ -41,7 +72,7 @@
     margin: 0;
     padding: 0;
 }
-
+//box design
 .box30 {
     margin: 2em 0;
     background: #f1f1f1;
@@ -60,7 +91,7 @@
     padding: 15px 20px;
     margin: 0;
 }
-
+//丸見出し
 .maru {
   position: relative;
   color: #333;
@@ -178,4 +209,109 @@
     text-align: center;
     font-size: 0.7em!important;
     margin-bottom: 1em!important;
+}
+
+.box-design10 {
+  margin: 3px auto;
+  padding: 3px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+//上だけ色線
+.sample_box10 {
+    padding: 1em 1.5em;
+    background: linear-gradient(to bottom, #ffffff, #eeeeee);/*背景色*/
+    background: -webkit-linear-gradient(top, #fffff, #eeeeee);/*背景色*/
+    border: 1px solid #eeeeee;/*枠線*/
+    border-top: 4px solid #00008b;/*上の線*/
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 1) inset;
+    color:#000;/*文字色*/
+}
+
+//見出し
+.heading02 {
+	position: relative;
+	font-size: 26px;
+	text-align: center;
+	border-bottom: 5px solid #dddddd;
+}
+
+.heading02::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70px;
+	height: 5px;
+	background-color: #387ccc;
+}
+//角丸のフラットボタン
+.btn-gradient-radius {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #000;
+  background-color: white;
+  transition: .4s;
+}
+
+.btn-gradient-radius:hover {
+  background-color: #ccc;
+}
+
+.maru-img {
+	width:200px;
+	height:200px;
+	object-fit:cover;
+	border-radius:50%;
+	object-position:0px 0px;
+}
+
+//btn 問い合わせ
+.cta_btn03 {
+  width: 100%;
+  max-width: 350px; /* ボタン幅 */
+  color: #fff; /* ボタン文字色 */
+  background-color: #B476CE; /* ボタン上色 */
+  position: relative;
+  padding: 1em 2em;
+  border-radius: 100vh;
+  border-bottom: 5px solid #7c3b97; /* ボタン下色 */
+  font-weight: bold; /* ボタン文字の太さ */
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.cta_btn03-copy {
+  font-size:90%; /* コピー文字サイズ */
+  font-weight: bold; /* コピー文字の太さ */
+  color: initial; /* コピー文字の色 */
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  width: 100%;
+}
+
+.cta_btn03-copy:before {
+  margin-right: 1rem;
+  content: '＼';
+}
+
+.cta_btn03-copy:after {
+  margin-left: 1rem;
+  content: '／';
+}
+
+/* マウスオーバーした際のデザイン */
+.cta_btn03:hover {
+  margin-top: calc(2em + 3px);
+  border-bottom: 2px solid #7c3b97; /* ボタン下色 */
 }
