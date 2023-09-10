@@ -2,11 +2,12 @@
 <% breadcrumb :root %>
 <%= breadcrumbs separator: " &rsaquo; ", class: "ml-5" %>
 <ul class="sliders">
-  <img src="assets/top.jpg" alt="" width="800">
-  <img src="assets/top1.jpg" alt="" width="800" height="621">
-  <img src="assets/top2.jpg" alt="" width="800" height="621">
-  <img src="assets/top3.jpg" alt="" width="800" height="621">
+  <img src="assets/top.jpg" alt="">
+  <img src="assets/top1.jpg" alt="">
+  <img src="assets/top2.jpg" alt="">
+  <img src="assets/top3.jpg" alt="">
 </ul>
+
 <div class="row bg-success text-white p-5">
     <div class="col-md-8 offset-md-2">
         <p class="heading07 text-center" data-en="Value">
@@ -17,7 +18,33 @@
     </div>
 </div>
 <div class="container">
-    <div class="mt-5">
+    <div class="row margin-top element">
+        <div class="col-md-7 mt-5">
+            <h2>BORDER FREEについて</h2>
+            <p class="mb-5 mt-3">現在の教育業界は、保護者の経済力や家庭環境、居住地域によって左右されてしまっています。
+            そこで私たちは、”全ての子どもたちが等しく勉強できる環境”「教育の機会の公平性」の実現を目指します。
+            </p>
+            <%= link_to"詳しく見る", about_path, class: "btn_01 m-5" %>
+        </div>
+        <div class="col-md-5 img-maru">
+            <img src="assets/top3.jpg" alt="">
+        </div>
+    </div>
+    <div class="row margin-top element">
+        <div class="col-md-5 img-maru">
+            <img src="assets/top3.jpg" alt="">
+        </div>
+        <div class="col-md-7">
+            <h2 class="ml-5">活動内容</h2>
+            <p class="mb-5 ml-5 mt-3">
+                ひとりひとりの生徒と向き合うことで、勉強の楽しさを味わい、
+                生徒の目標達成に向けて全力でサポートします。<br><br>
+                ・個別指導<br>・さくら教室（集団授業）<br>・交流イベント
+            </p>
+            <%= link_to"詳しく見る", classes_path, class: "btn_01 m-5" %>
+        </div>
+    </div>
+    <div class="mt-5 element">
         <div class="text-center margin-top">
           <h3 class="text-center mt-5 undertitle">活動内容</h3>
         </div>
@@ -42,7 +69,31 @@
             一緒に良いNPO法人していきましょう。</p>
           </li>
         </ul>
-      </div>
+    </div>
+    <div class="element">
+        <div class="text-center margin-top">
+          <h3 class="text-center mt-5 undertitle">料金</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-4 my-5 offset-md-1">
+                <img src="assets/top.jpg" alt="top">
+            </div>
+            <div class="col-md-6 offset-md-1">
+                <div class="row box8 col-md-8">
+                    <p class="h5">一人でなかなか勉強できない</p>
+                </div>
+                <div class="row box8 col-md-8">
+                    <p class="h5">自分のペースで勉強に集中したい</p>
+                </div>
+                <div class="row box8 col-md-8">
+                    <p class="h5">部活も勉強も全力で取り組みたい</p>
+                </div>
+                <div class="row box8 col-md-8">
+                    <p class="h5">効率よく成績UPさせたい</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="element">
         <div class="text-center margin-top">
           <h3 class="text-center mt-5 undertitle">こういった方におすすめ</h3>
@@ -90,6 +141,7 @@
             </div>
         </div>
     </div>
+    
     <div>
         <div class="row margin-top">
             <div class="col-md-4">
@@ -100,4 +152,5 @@
             </div>
         </div>
     </div>
+    <%= render "layouts/question" %>
 </div>

@@ -149,6 +149,9 @@ li{
   background-color: black;
   border-radius: 2px;
 }
+.undertitle-w:before {
+  background-color: white;
+}
 
 /*見出し*/
 .heading07 {
@@ -231,7 +234,7 @@ li{
 //見出し
 .heading02 {
 	position: relative;
-	font-size: 26px;
+	font-size: 40px;
 	text-align: center;
 	border-bottom: 5px solid #dddddd;
 }
@@ -314,4 +317,34 @@ li{
 .cta_btn03:hover {
   margin-top: calc(2em + 3px);
   border-bottom: 2px solid #7c3b97; /* ボタン下色 */
+}
+
+.img-maru img {
+  border-radius: 20px;
+  width: 100%;
+}
+//btn
+a.btn_01 {
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	color: #27acd9;
+	transition: 0.5s;
+}
+a.btn_01:hover {
+	color: #fff;
+	background: #27acd9;
+}
+
+.sliders img {
+  height: 80vh;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  // width: 100%;
 }
