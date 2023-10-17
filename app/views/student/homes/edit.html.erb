@@ -36,6 +36,15 @@
             <td><%= f.text_field :parent_name_kana, autocomplete: "parent_name_kana" %></td>
           </tr>
           <tr>
+            <td><%= f.label :学校, class: "mr-5" %></td>
+            <td><%= f.text_field :school,autocomplete: "school" %></td>
+          </tr>
+          <!--志望校-->
+          <!--<tr>-->
+          <!--  <td><%#= f.label :志望校, class: "mr-5" %></td>-->
+          <!--  <td><%#= f.text_field :desired_school,autocomplete: "school" %></td>-->
+          <!--</tr>-->
+          <tr>
             <td><%= f.label :パスワード %>
             <% if @minimum_password_length %>
             <em>（<%= @minimum_password_length %> 文字以上）</em>

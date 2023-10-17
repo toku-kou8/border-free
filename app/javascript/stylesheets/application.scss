@@ -1,6 +1,14 @@
 @use '~bootstrap/scss/bootstrap';
 @use '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+.sliders img {
+  height: 100vh;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  // object-fit: cover;
+  width: 100%;
+}
 .simple-calendar{
   .day{
     height: 80px;
@@ -179,39 +187,8 @@ li{
 	font-style: italic;
 }
 
-/* セロハンボックス*/
-.sample_box11 {
-   width: 100%;/* 紙の横幅 100%にすると全幅表示に */
-   padding: 15px;
-   margin: 2em auto;
-   background: #f7f092;/* 紙の色 */
-   color: #000;/* 文字色 */
-   box-shadow: 4px 4px 4px rgba(0,0,0,0.03);
-  // transform:rotate(2deg);
-   word-break: break-all;
-}
-.sample_box11 p {
-    margin: 0;
-    padding: 0;
-    font-size: 0.9em;
-}
-.sample_box11_tape {
-    width: 50%;
-    height: 35px;
-    margin: -25px auto 0;
-    background: #989898;
-    // transform: rotate(-3deg);
-    opacity: 0.1;
-}
-.sample_box11_title {
-    text-align: center;
-    font-size: 1.3em!important;
-    margin-top: 10px!important;
-}
-.sample_box11_subtitle {
-    text-align: center;
-    font-size: 0.7em!important;
-    margin-bottom: 1em!important;
+.bg-grey {
+  background: #f2f2f3;
 }
 
 .box-design10 {
@@ -347,4 +324,124 @@ a.btn_01:hover {
   max-width: 100%;
   object-fit: cover;
   // width: 100%;
+}
+
+// .support-head {
+//   background-image: image-url("top1.jpg");
+//   // background-image: url("top1.jpg");
+// }
+
+//料金表
+.cp_pricetable3 *, .cp_pricetable3 *:before, .cp_pricetable3 *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.cp_pricetable3 {
+	width: 100%;
+	margin: 0 auto;
+	border-spacing: 1px 0;
+	border-collapse: separate;
+}
+.cp_pricetable3 th, .cp_pricetable3 td {
+	padding: 10px;
+}
+/*Headerブロック*/
+.cp_pricetable3 th {
+	position: relative;
+	z-index: 1;
+	width: 125px;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	color: #ffffff;
+	border-radius: 5px 5px 0 0;
+	background: #88b7d5;
+}
+
+.cp_pricetable3 th.group1 {
+	background: #2e9b72;
+}
+.cp_pricetable3 th.group1:after {
+	color: #2e9b72;
+}
+.cp_pricetable3 th.group2 {
+	background: #da3c41;
+}
+.cp_pricetable3 th.group2:after {
+	color: #da3c41;
+}
+.cp_pricetable3 th.group3 {
+	background: #131874;
+}
+.cp_pricetable3 th.group3:after {
+	color: #131874;
+}
+/*メインブロック*/
+.cp_pricetable3 tr td {
+	padding-top: 15px;
+	text-align: center;
+	border: none;
+}
+.cp_pricetable3 tr:last-child td {
+	border-radius: 0 0 5px 5px;
+}
+.cp_pricetable3 tr:nth-child(2n+1) td.group1 {
+	background: #8cd9bc;
+}
+.cp_pricetable3 tr:nth-child(2n+0) td.group1 {
+	background: #c3e4d8;
+}
+.cp_pricetable3 tr:nth-child(2n+1) td.group2 {
+	background: #f2c2c2;
+}
+.cp_pricetable3 tr:nth-child(2n+0) td.group2 {
+	background: #f7e1e1;
+}
+.cp_pricetable3 tr:nth-child(2n+1) td.group3 {
+	background: #a9bce2;
+}
+.cp_pricetable3 tr:nth-child(2n+0) td.group3 {
+	background: #d7e1f4;
+}
+/*ボタンデザイン*/
+.cp_pricetable3 a.cp_btn {
+	position: relative;
+	z-index: 1;
+	display: block;
+	overflow: hidden;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0.3em 1em;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: 1px solid #da3c41;
+	border-radius: 4px;
+	background: #da3c41;
+}
+.cp_pricetable3 .cp_btn:after {
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 0;
+	content: '';
+	transition: 0.3s;
+	-webkit-transform: translate(-50%,-50%) rotate(45deg);
+	transform: translate(-50%,-50%) rotate(45deg);
+	opacity: 0;
+	background: #ffffff;
+}
+.cp_pricetable3 .cp_btn:hover {
+	color: #da3c41;
+}
+.cp_pricetable3 .cp_btn:hover:after {
+	height: 250%;
+	opacity: 1;
+}
+.cp_pricetable3 .cp_btn:active:after {
+	height: 350%;
+	opacity: 1;
 }
