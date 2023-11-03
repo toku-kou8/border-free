@@ -67,3 +67,7 @@ gem 'jp_prefecture'
 gem 'kaminari'
 gem 'image_processing', '~> 1.2'
 gem 'react-rails'
+
+#blog
+gem "tinymce-rails"
+gem "tinymce-rails-langs"

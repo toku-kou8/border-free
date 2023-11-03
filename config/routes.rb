@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'blogs/show'
+    get 'blogs/index'
+  end
   root "public/homes#top"
   # devise_for :teacher, controllers: {
   #   sessions: 'teacher/sessions',
@@ -26,6 +30,7 @@ Rails.application.routes.draw do
     get '/social' =>'homes#social', as: 'social'
     get '/support' => 'homes#support', as: 'support'
     get '/classes' => 'homes#classes', as: 'classes'
+    resources :blogs, only:[:index, :show]
   end
   scope module: :teacher do
     # devise_for :teachers, controllers: {
@@ -52,6 +57,7 @@ Rails.application.routes.draw do
     #   regisrations: 'admin/regisrations',
     #   passwords: 'admin/passwords'
     # }
+
   end
   namespace :admin do
     resources :students, only:[:index, :show]
@@ -61,6 +67,7 @@ Rails.application.routes.draw do
     post 'classes/subject' => 'classes#subcreate', as: 'subjects'
     patch 'classes/subject/:id' => 'classes#subupdate', as: 'subject_update'
     delete 'classes/subject/:id' => 'classes#destory', as: 'subject_destroy'
+    resources :blogs
   end
 
   scope module: :student do
