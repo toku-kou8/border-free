@@ -1,0 +1,37 @@
+<%= render "teachers/shared/header" %>
+<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<p id="notice"><%= notice %></p>
+<div style="height: 1000px;">
+  <div class="text-center mt-3">
+    <h1 class="text-center undertitle">授業一覧</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>授業日</th>
+              <th>生徒名</th>
+              <th>科目</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @lessons.each do |lesson| %>
+            <tr>
+              <td><%= lesson.id %></td>
+              <td><%= lesson.start_time.strftime("20%y/%m/%d %H:%M~") %></td>
+              <td><%= lesson.student.name %></td>
+              <td><%= lesson.subject.name %></td>
+              <td><%= link_to "詳細", teacher_class_path(lesson) %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= paginate @lessons %>
+      </div>
+    </div>
+  </div>
+</div>

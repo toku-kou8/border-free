@@ -1,11 +1,11 @@
 /* global $*/
 $(function () {
   $(".sliders").slick({
-    variableWidth: true,
-    adaptiveHeight: true,
-    centerMode: true,
+    // variableWidth: true,
+    // adaptiveHeight: true,
+    // centerMode: true,
     focusOnSelect: true,
-    arrows: true,
+    // arrows: true,
     autoplay: true,
     autoplaySpeed: 2000,
     dots: true,

@@ -1,28 +1,62 @@
 <%= render "teachers/shared/header" %>
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<% shifts_time = @shifts.where("start_time <= ?", Date.today.end_of_month) %>
+<% now = Date.current %>
 <div class="text-center mt-3">
-    <h1 class="text-center mt-5 undertitle">マイページ</h1>
-  </div>
+  <h1 class="text-center mt-5 undertitle">マイページ</h1>
+</div>
 <div class="row">
-  <table class="table col-md-3 ml-5 mr-5">
-    <thead class="thead-light">
-      <tr>
-        <th>授業予定</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody class = "scroll">
-      <% @shifts.each do |shift| %>
+  <div class="col-md-3 ml-5 mr-5">
+    <table class="table">
+      <thead class="thead-light">
         <tr>
-          <td><%= shift.start_time.strftime("%-m/%-d")%>(<%= week[shift.start_time.wday] %>) <%= shift.start_time.strftime("%H:%M ~")%></td>
-          <td><%= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-dark" %></td>
+          <th>授業予定</th>
+          <th>生徒名</th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <% shifts_time = @shifts.where("start_time >= ?", Date.today.beginning_of_month).where("start_time <= ?", Date.today.end_of_month) %>
+      </thead>
+      <tbody class = "scroll">
+        <% @shifts.where("start_time >= ?", now).each do |shift| %>
+          <tr>
+            <td><%= shift.start_time.strftime("%-m/%-d")%>(<%= week[shift.start_time.wday] %>) <%= shift.start_time.strftime("%H:%M ~")%></td>
+            <% if shift.status >= 2 %>
+              <td><%= shift.lesson.student.name %></td>
+            <% else %>
+              <td>予約なし</td>
+            <% end %>
+            <td>
+              <% if shift.start_time >= now.since(5.day) and shift.status != 2 %>
+                <%= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-danger" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>過去一ヶ月の授業</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class = "scroll">
+        <% shifts_time.where("start_time >= ?", now.prev_month).each do |shift| %>
+          <tr>
+            <td><%= shift.start_time.strftime("%-m/%-d")%>(<%= week[shift.start_time.wday] %>) <%= shift.start_time.strftime("%H:%M ~")%></td>
+            <td>
+            <% if shift.status >= 2 %>
+              <%= link_to "詳細", teacher_class_path(shift.lesson) %>
+            <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
   <div class="col-md-4 ml-2 mr-2">
-    <div class="schedule"><h3>今月の稼働時間</h3></div>
+    <div class="schedule"><h3><%= now.month %>月の稼働時間</h3></div>
   	<table class="table">
       <tr>
         <th>シフト予定時間</th>
@@ -30,7 +64,7 @@
       </tr>
       <tr>
         <th>現在のシフト時間</th>
-        <td><%= shifts_time.where("start_time <= ?", Date.current).count*1.5 %>時間</td>
+        <td><%= shifts_time.where("start_time <= ?", now).count*1.5 %>時間</td>
       </tr>
       <tr>
         <th>授業予定時間</th>
@@ -39,18 +73,29 @@
 
       <tr>
         <th>現在の授業時間</th>
-        <td><%= shifts_time.where("start_time <= ?", Date.current).where("status == 2").count * 1.5 %>時間</td>
+        <td><%= shifts_time.where("start_time <= ?", now).where("status == 4").count * 1.5 %>時間</td>
       </tr>
     </table>
+  </div>
+  <div class="col-md-3">
+    <div class="m-5">
+      <%= link_to "過去の授業一覧", teacher_classes_path, class: 'btn btn-success btn-lg' %>
+    </div>
+    <div class="m-5">
+      <%= link_to "シフト提出", teacher_shifts_path, class: 'btn btn-info btn-lg' %>
+    </div>
+    <div class="m-5">
+      <%= link_to "講師情報修正", edit_teacher_homes_path, class: 'btn btn-primary btn-lg' %>
+    </div>
   </div>
     <%#= month_calendar events: @shifts do |date, shifts| %>
       <%#= date.day %>
 
       <%# shifts.each do |shift| %>
-        <div>
+        <!--<div>-->
           <%#= shift.start_time.strftime("%H:%M~") %>
           <%#= link_to "削除", teacher_shift_path(shift), method: :delete,class: "text-danger" %>
-        </div>
+        <!--</div>-->
       <%# end %>
     <%# end %>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_21_032337) do
+ActiveRecord::Schema.define(version: 2023_11_04_040759) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,12 +52,33 @@ ActiveRecord::Schema.define(version: 2023_05_21_032337) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "blogs", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "name_kana", null: false
+    t.string "email", null: false
+    t.string "phone", null: false
+    t.string "title", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.integer "teacher_id", null: false
     t.integer "student_id", null: false
     t.integer "subject_id", null: false
     t.integer "shift_id"
     t.integer "status", default: 0, null: false
+    t.text "student_comment"
+    t.text "teacher_comment"
+    t.integer "star"
     t.datetime "start_time", null: false
     t.integer "timetable", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -118,6 +139,7 @@ ActiveRecord::Schema.define(version: 2023_05_21_032337) do
     t.string "unconfirmed_email"
     t.string "name", null: false
     t.string "name_kana", null: false
+    t.string "phone_number"
     t.string "school", null: false
     t.string "faculty", null: false
     t.text "introduction"

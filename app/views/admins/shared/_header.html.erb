@@ -12,10 +12,16 @@
           <%= link_to '管理者ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
-            <%= link_to "講師一覧", admin_teachers_path, class: 'nav-link text-dark' %>
+          <%= link_to "ブログ投稿", new_admin_blog_path, class: 'nav-link text-dark' %>
         </li>
         <li class="nav-item">
-            <%= link_to "生徒一覧", admin_students_path, class: 'nav-link text-dark' %>
+          <%= link_to "ブログ一覧", admin_blogs_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "問い合わせ", admin_contacts_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "生徒一覧", admin_students_path, class: 'nav-link text-dark' %>
         </li>
           <% if student_signed_in? %>
           <li class="nav-item">

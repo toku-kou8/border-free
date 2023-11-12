@@ -1,38 +1,40 @@
 <%= render "admins/shared/header" %>
 <% week = ["日", "月", "火", "水", "木", "金", "土"] %>
+<% now = Date.current %>
 <p id="notice"><%= notice %></p>
 
-<div class="text-center mt-3">
-  <h1 class="text-center undertitle">講師一覧</h1>
-</div>
-<div class="container">
+<div class="toppage" style="height: 800px;">
+  <div class="text-center mt-3">
+    <h1 class="text-center mt-5 undertitle">講師一覧</h1>
+  </div>
+
+  <br>
+
   <div class="row">
+    <div class="col-md-3 ml-3">
+    	<div class="schedule"></div>
+    </div>
+
     <div class="col-md-10 offset-md-1">
       <table class="table">
         <thead>
           <tr>
-            <th>id</th>
             <th>名前</th>
-            <th>学年</th>
+            <th>生年月日</th>
             <th>大学</th>
-            <th>担当科目</th>
-            <th></th>
+            <th><%= now.last_month.month %>月の稼働時間</th>
+            <th><%= now.month %>月の稼働予定</th>
           </tr>
         </thead>
         <tbody>
           <% @teachers.each do |teacher| %>
-          <tr>
-            <td><%= teacher.id %></td>
-            <td><%= teacher.name %></td>
-            <td><%= teacher.birth %></td>
-            <td><%= teacher.school %></td>
-            <td>
-              <% teacher.subjects.each do |subject| %>
-              <%= subject.name_grade %>
-              <% end %><br>
-            </td>
-            <td><%= link_to "詳細", admin_teacher_path(teacher) %></td>
-          </tr>
+            <tr>
+              <td><%= link_to teacher.name, admin_teacher_path(teacher) %></td>
+              <td><%= teacher.birth %></td>
+              <td><%= teacher.school %></td>
+              <td><%= teacher.shifts.where("status == 4").where("start_time >=?", now.prev_month.beginning_of_month).where("start_time <=?", now.prev_month.end_of_month).count * 1.5 %></td>
+              <td><%= teacher.shifts.where("start_time >=?", now.beginning_of_month).where("start_time <=?", now.end_of_month).count * 1.5 %></td>
+            </tr>
           <% end %>
         </tbody>
       </table>

@@ -1,1 +1,67 @@
 <%= render "students/shared/header" %>
+<div class="container" style="height:100%;">
+  <div class="row">
+    <h2 class="mt-5 mx-auto">生徒情報修正</h2>
+  </div>
+  <div class="row">
+    <div class="mt-4 mx-auto">
+      <%= form_with model: @student, url: student_update_path, method: :patch do |f| %>
+        <table class="table">
+          <tr>
+            <td><%= f.label :メールアドレス %></td>
+            <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :名前, class: "mr-5" %></td>
+            <td><%= f.text_field :name, autocomplete: "name" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :名前（カナ）, class: "mr-5" %></td>
+            <td><%= f.text_field :name_kana, autocomplete: "name_kana" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :電話番号, class: "mr-5" %></td>
+            <td><%= f.text_field :phone_number,autocomplete: "phone_number" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :生年月日 , class: "mr-5"%></td>
+            <td><%= f.date_field :birth, autocomplete: "birth" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :保護者氏名, class: "mr-5" %></td>
+            <td><%= f.text_field :parent_name, autocomplete: "parent_name" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :保護者氏名（カナ）, class: "mr-5" %></td>
+            <td><%= f.text_field :parent_name_kana, autocomplete: "parent_name_kana" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :学校, class: "mr-5" %></td>
+            <td><%= f.text_field :school,autocomplete: "school" %></td>
+          </tr>
+          <!--志望校-->
+          <!--<tr>-->
+          <!--  <td><%#= f.label :志望校, class: "mr-5" %></td>-->
+          <!--  <td><%#= f.text_field :desired_school,autocomplete: "school" %></td>-->
+          <!--</tr>-->
+          <tr>
+            <td><%= f.label :パスワード %>
+            <% if @minimum_password_length %>
+            <em>（<%= @minimum_password_length %> 文字以上）</em>
+            <% end %>
+            </td>
+            <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :パスワード確認 , class: "mr-5"%></td>
+            <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= f.submit "更新",class: "btn btn-success" %></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -21,5 +21,9 @@ module BorderFree
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
+
+    # blog用
+    config.action_view.sanitized_allowed_tags = %w(h1 h2 h3 h4 h5 h6 ul ol li p span a img table tbody th tr td em br b strong s)
+config.action_view.sanitized_allowed_attributes = %w(id class href style src target rel)
   end
 end

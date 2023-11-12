@@ -1,12 +1,14 @@
-<%= render "admin/shared/header" %>
-
+<%= render "admins/shared/header" %>
+<div class="text-center mt-3">
+  <h1 class="text-center mt-5 undertitle">科目追加</h1>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-4">
     <%= form_with model: @subject, url: admin_subjects_path do |f| %>
-      <%= f.label :name, "教科名" %>
+      <%= f.label :name, "教科名" %><br>
       <%= f.text_field :name %> <br>
-      <%= f.label :grade, "学年"%>
+      <%= f.label :grade, "学年"%><br>
       <%= f.select :grade, Subject.grades.keys.map {|k| [I18n.t("enums.subject.grade.#{k}"), k]} %><br>
       <%= f.submit "作成" , class: "btn btn-success" %>
     <% end %>

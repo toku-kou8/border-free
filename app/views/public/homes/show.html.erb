@@ -7,11 +7,11 @@
 
 <div class="container">
   <div class="row">
-    <table class="table col-md-6 offset-md-3">
+    <table class="table col-md-7 offset-md-3">
       <tbody>
         <tr>
           <th>名称</th>
-          <td>BorderFree</td>
+          <td>特定非営利活動法人　BORDER　FREE</td>
         </tr>
         <tr>
           <th>設立</th>
@@ -23,7 +23,7 @@
         </tr>
         <tr>
           <th>お問い合わせ</th>
-          <td>TEL：03-0000-0000　／　Mail：border.free.2021@gmail.com </td>
+          <td>TEL：03-0000-0000　<br>Mail：border.free.2021@gmail.com </td>
         </tr>
         <tr>
           <th>代表者</th>
@@ -68,5 +68,11 @@
     }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
+  </div>
+</div>
+<div class="pt-3clearfix bg-grey">
+  <div class="p-3 row">
+    <%= breadcrumbs separator: " &rsaquo; ", class: "col-md-4 pt-2" %>
+      <a href="#top" class="text-dark font-weight-bold col-md-2 offset-md-6 btn btn-success">↑ Page Top</a>
   </div>
 </div>

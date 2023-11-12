@@ -1,22 +1,4 @@
 Rails.application.routes.draw do
-  namespace :teacher do
-    get 'students/index'
-    get 'students/show'
-  end
-  namespace :admin do
-    get 'students/index'
-    get 'students/show'
-  end
-  namespace :admin do
-    get 'teachers/index'
-    get 'teachers/show'
-  end
-  namespace :student do
-    get 'classes/index'
-    get 'classes/create'
-    get 'classes/show'
-    get 'classes/update'
-  end
   root "public/homes#top"
   # devise_for :teacher, controllers: {
   #   sessions: 'teacher/sessions',
@@ -44,6 +26,8 @@ Rails.application.routes.draw do
     get '/social' =>'homes#social', as: 'social'
     get '/support' => 'homes#support', as: 'support'
     get '/classes' => 'homes#classes', as: 'classes'
+    resources :blogs, only:[:index, :show]
+    resources :contacts, only: [:new, :create]
   end
   scope module: :teacher do
     # devise_for :teachers, controllers: {
@@ -54,22 +38,16 @@ Rails.application.routes.draw do
   end
   namespace :teacher do
     get 'mypage' => 'homes#top', as: 'top'
-    get 'subject' => 'homes#edit', as: 'home_edit'
+    # get 'subject' => 'homes#edit', as: 'home_edit'
+    resource :homes, only:[:edit, :update]
     post 'subject' => 'homes#create', as: 'homes_subject'
     delete 'subject/:id' => 'homes#destory', as: 'home_destroy'
     resources :students, only:[:index, :show]
     get 'students/result/:id' => 'students#result', as: 'result'
     resources :shifts, only: [:index, :create, :update, :destroy]
-    resources :classes, only: [:index, :show]
+    resources :classes, only: [:index, :show, :update]
   end
 
-  scope module: :admin do
-    # devise_for :admins , controllers: {
-    #   sessions: 'admin/sessions',
-    #   regisrations: 'admin/regisrations',
-    #   passwords: 'admin/passwords'
-    # }
-  end
   namespace :admin do
     resources :students, only:[:index, :show]
     resources :teachers, only:[:index, :show]
@@ -78,6 +56,8 @@ Rails.application.routes.draw do
     post 'classes/subject' => 'classes#subcreate', as: 'subjects'
     patch 'classes/subject/:id' => 'classes#subupdate', as: 'subject_update'
     delete 'classes/subject/:id' => 'classes#destory', as: 'subject_destroy'
+    resources :blogs
+    resources :contacts, only: [:index, :show]
   end
 
   scope module: :student do

@@ -1,0 +1,7 @@
+<%= @contact.name %> 様 から問い合わせがありました。<br>
+【Time】：<%= @contact.created_at.strftime("20%-y-%-m-%-d %-H:%-M") %><br>
+【Tel】：<%= @contact.phone %><br>
+【Mail】：<%= @contact.email %><br>
+【用件】：<%= @contact.title %><br>
+【お問い合わせ内容】<br>
+<span style="white-space: pre-wrap;"><%= @contact.content %></span>

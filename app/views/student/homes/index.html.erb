@@ -6,6 +6,11 @@
   <div class="text-center mt-3">
     <h1 class="text-center mt-5 undertitle">生徒マイページ</h1>
   </div>
+  <div class="text-center">
+    <%= link_to "授業を予約する", student_reservations_path, class: 'btn btn-success btn-lg mx-3' %>
+    <%= link_to "過去の授業を見る", student_classes_path, class: 'btn btn-info btn-lg mx-3' %>
+    <%= link_to "生徒情報修正", student_edit_path, class: 'btn btn-primary btn-lg mx-3' %>
+  </div>
   <br>
   <div class="row mt-5">
     <div class="col-md-6 offset-md-1">
@@ -13,7 +18,7 @@
         <%= date.day %>
 
         <% lessons.each do |lesson| %>
-          <div>
+          <div class="box-design10">
             <%= lesson.start_time.strftime("%H:%M~") %>
             <%= lesson.teacher.name %><br>
             <%= lesson.subject.name %>
@@ -22,12 +27,6 @@
       <% end %>
     </div>
     <div class="col-md-4">
-      <div class="m-5">
-        <%= link_to "授業を予約する", student_reservations_path, class: 'btn btn-success btn-lg' %>
-      </div>
-      <div class="m-5">
-        <%= link_to "過去の授業を見る", student_classes_path, class: 'btn btn-info btn-lg' %>
-      </div>
     	<div class="schedule"><h3>授業予定</h3></div>
     	<table class="table">
         <thead class="thead-light">

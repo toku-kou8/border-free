@@ -5,16 +5,16 @@
 <div class="text-center mt-3">
   <h2 class="text-center undertitle">BORDER FREEとは</h2>
 </div>
-<div class="container mt-5">
-  <div class="pt-3 pb-3">
-    <h2 class="text-center">教育格差の是正</h2>
-    <div class="text-center">
-      <h6 class="mt-5">・教育機会の公平性</h6>
-      <h6>・居場所づくり</h6>
-    </div>
+<div class="py-5 bg-about text-white">
+  <h2 class="text-center pt-5">教育格差の是正</h2>
+  <div class="text-center">
+    <h6 class="mt-5">・教育機会の公平性</h6>
+    <h6>・居場所づくり</h6>
   </div>
+</div>
+<div class="container mt-5">
   <div class="margin-top element">
-    <h4 class="text-center maru">BorderFreeを設立したわけ</h4>
+    <h4 class="text-center maru">BORDER FREEを設立したわけ</h4>
     <div class="row">
       <p class="mt-5 col-md-8 offset-md-2 text-center">
         私たちは、学生生活や、塾講師のアルバイトなどを通して、</br>
@@ -25,23 +25,23 @@
       </p>
     </div>
   </div>
-  <div class="margin-top element">
-    <h4 class="text-center mt-5 maru">非営利の在り方の提案</h4>
-    <div class="row">
-      <p class="mt-5 col-md-8 offset-md-2 text-center">
-        日本の非営利団体の多くは、単なる”地域のボランティア”と化しており、</br>
-        継続性、包括性において難があると言わざるを得ません。</br>
-        そこで、低価格かつ高品質で誰でも受けられる授業を提供することで、</br>
-        学習塾業界全体に適切な価格破壊を起こしたいと考えています。
-      </p>
-    </div>
+</div>
+<div class="margin-top element bg-grey py-5">
+  <h4 class="text-center mt-5 maru">非営利の在り方の提案</h4>
+  <div class="row">
+    <p class="mt-5 col-md-8 offset-md-2 text-center">
+      日本の非営利団体の多くは、単なる”地域のボランティア”と化しており、</br>
+      継続性、包括性において難があると言わざるを得ません。</br>
+      そこで、低価格かつ高品質で誰でも受けられる授業を提供することで、</br>
+      学習塾業界全体に適切な価格破壊を起こしたいと考えています。
+    </p>
   </div>
+</div>
+<div class="container">
   <div class="margin-top element">
     <h4 class="text-center mt-5 maru">ビジョン</h4>
-    <div class="row">
-      <div class="col-md-8 offset-md-1 mt-5">
-        <img src="assets/about.jpg" alt="top" width="600">
-      </div>
+    <div class="col-md-8 offset-md-2 mt-5">
+      <img src="assets/about.jpg" alt="top" width="600">
     </div>
   </div>
 
@@ -49,7 +49,7 @@
     <h4 class="text-center mt-5 maru">共同代表からのメッセージ</h4>
     <div class="row border rounded p-3 mt-5">
       <div class="col-md-3 offset-md-1">
-        <%#= 画像 %>
+        <img src="assets/ninomiya.jpg" alt="" class="maru-img ml-3 mt-5">
         <div class="box30">
           <h5 class="mt-3 text-center box-title">二宮龍斗</h5>
           <p class="rounded p-3">
@@ -110,7 +110,7 @@
     </div>
     <div class="row border rounded p-3 mt-5 mb-5">
       <div class="col-md-3 offset-md-1">
-        <%#= 画像 %>
+        <img src="assets/murakami.jpg" alt="" class="maru-img ml-3">
         <div class="box30">
           <h5 class="mt-3 text-center box-title">村上晃一</h5>
           <p class="rounded p-3">
@@ -167,5 +167,12 @@
         </p>
       </div>
     </div>
+  </div>
+  <%= render "layouts/question" %>
+</div>
+<div class="pt-3clearfix bg-grey">
+  <div class="p-3 row">
+    <%= breadcrumbs separator: " &rsaquo; ", class: "col-md-4 pt-2" %>
+      <a href="#top" class="text-dark font-weight-bold col-md-2 offset-md-6 btn btn-success">↑ Page Top</a>
   </div>
 </div>

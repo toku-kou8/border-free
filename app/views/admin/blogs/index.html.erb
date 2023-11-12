@@ -1,0 +1,39 @@
+<%= render "admins/shared/header" %>
+<p id="notice"><%= notice %></p>
+<div class="toppage" style="height: 800px;">
+  <div class="text-center mt-3">
+    <h1 class="text-center undertitle">ブログ一覧</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="mx-5 mb-4">
+          <%= link_to "投稿する", new_admin_blog_path, class: "btn btn-success" %>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>作成日<%= sort_asc("created_at") %><%= sort_desc("created_at") %></th>
+              <th>タイトル</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @blogs.each do |blog| %>
+            <tr>
+              <td><%= blog.id %></td>
+              <td><%= blog.created_at.strftime("20%-y-%-m-%-d") %></td>
+              <td><%= blog.title %></td>
+              <td><%= link_to "詳細", admin_blog_path(blog), class: "btn btn-success" %></td>
+              <td><%= link_to "編集", edit_admin_blog_path(blog), class: "btn btn-info" %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= paginate @blogs %>
+      </div>
+    </div>
+  </div>
+</div>

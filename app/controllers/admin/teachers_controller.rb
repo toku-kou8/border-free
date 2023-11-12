@@ -5,6 +5,6 @@ class Admin::TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
-    @shift_time = @teacher.shifts.where("start_time >= ?", Date.today.last_month.beginning_of_month)
+    @shift_time = @teacher.shifts
   end
 end
