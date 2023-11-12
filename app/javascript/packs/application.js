@@ -16,7 +16,6 @@ import '@fortawesome/fontawesome-free/js/all'
 
 // window.$ = window.jQuery = require('jquery');
 require("./slick")
-require('./raty')
 
 Rails.start()
 // Turbolinks.start()
@@ -55,7 +54,7 @@ $(function () {
 });
 
 $(function(){
-  $('a[href^="#"]').click(function(){
+  $('a[href*="#"]').click(function(){
     var href= $(this).attr("href");
     var header = $('header').height();
     var target = $(href == "#" || href == "" ? 'html' : href);

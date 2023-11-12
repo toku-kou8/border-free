@@ -2,21 +2,12 @@
 
 <% breadcrumb :support %>
 <%= breadcrumbs separator: " &rsaquo; ", class: "m-5" %>
+<div class="text-center mt-3 bg-classes text-white">
+  <h1 class="text-center undertitle undertitle-w">ご寄付・ボランティア</h1>
+</div>
 <div class="container">
-  <div class="text-center mt-3 support-head">
-    <h1 class="text-center undertitle">ご寄付・ボランティア</h1>
-  </div>
-  <div class="row margin-top bg-support py-5">
-    <div class="col-md-7 offset-md-2 py-5">
-      <p class="heading07 text-center text-white py-5" data-en="Support">
-        BORDER FREEは<br>
-        ”全ての子どもたちが等しく勉強できる環境”<br>
-        「教育の機会の公平性」の実現を目指します
-      </p>
-    </div>
-  </div>
   <div class="row">
-    <div class="col-md-8 offset-md-2 text-center">
+    <div class="col-md-8 offset-md-2 text-center mt-5">
       <h3>2つのサポート</h3>
       <p class="mt-5">
         子どもたちの放課後をつくっていくためには、<br>
@@ -27,13 +18,13 @@
   </div>
   <div class="row mt-5">
     <a href="#donate" class="col-md-3 offset-md-2 text-dark font-weight-bold">
-      <div class="text-center sample_box10">
+      <div class="text-center neuro-about sample_box10">
         BORDER FREEの<br>
         活動に寄付する
       </div>
     </a>
     <a href="#volunteer" class="col-md-3 offset-md-2 text-dark font-weight-bold">
-      <div class="text-center sample_box10">
+      <div class="text-center neuro-about sample_box10">
         ボランティア<br>
         として関わる
       </div>
@@ -74,19 +65,19 @@
     <ul class="row">
       <li class="col-md-3 offset-md-1">
         <div class="img">
-          <img src="assets/top.jpg" alt="" class="maru-img">
+          <img src="assets/top.jpg" alt="" class="maru-img neuro-support">
         </div>
         <p class="pt-4">授業をする場所代として使わせていただきます。</p>
       </li>
       <li class="col-md-3 offset-md-1">
         <div class="img">
-          <img src="assets/top.jpg" alt="" class="maru-img">
+          <img src="assets/top.jpg" alt="" class="maru-img neuro-support">
         </div>
         <p class="pt-4">講師の授業費として使わせていただきます。</p>
       </li>
       <li  class="col-md-3 offset-md-1">
         <div class="img">
-          <img src="assets/top.jpg" alt="" class="maru-img">
+          <img src="assets/top.jpg" alt="" class="maru-img neuro-support">
         </div>
         <p class="pt-4">イベントなどに使わせていただきます。</p>
       </li>
@@ -107,11 +98,13 @@
     <div class="box-title">お問い合わせ</div>
     <p class="text-center h5 pt-5">ご検討いただける企業様には直接ご説明にお伺いしますので、<br>
   まずはお気軽にお問い合わせください。</p>
-    <div class="text-center py-5">
-      <a class="cta_btn03">
-      <span class="cta_btn03-copy">お気軽にお問い合わせください！</span>
-      お問い合わせはこちら
-      </a>
+    <div class="pb-5 text-center">
+      <div class="cta_btn03">
+      <%= link_to new_contact_path do %>
+        <span class="cta_btn03-copy">お気軽にお問い合わせください！</span>
+        <div class="text-white">お問い合わせはこちら</div>
+      <% end %>
+      </div>
     </div>
   </div>
   <div class="row my-5">
@@ -154,19 +147,19 @@
     <ul class="row">
       <li class="col-md-3 offset-md-1">
         <div class="img">
-          <img src="assets/top.jpg" alt="" class="maru-img">
+          <img src="assets/top.jpg" alt="" class="maru-img neuro-support2">
         </div>
         <p class="pt-4">集団授業の講師として活動します。曜日は固定で週に2コマ以上授業をします。</p>
       </li>
       <li class="col-md-3 offset-md-1">
         <div class="img">
-          <img src="assets/top.jpg" alt="" class="maru-img">
+          <img src="assets/top.jpg" alt="" class="maru-img neuro-support2">
         </div>
         <p class="pt-4">個別授業の講師として活動します。曜日は固定で複数の生徒を指導します。</p>
       </li>
       <li  class="col-md-3 offset-md-1">
         <div class="img">
-          <img src="assets/top.jpg" alt="" class="maru-img">
+          <img src="assets/top.jpg" alt="" class="maru-img neuro-support2">
         </div>
         <p class="pt-4">BORDER FREEの運営をします。月に何度かのミーティングがあります。
         一緒に良いNPO法人していきましょう。</p>
@@ -179,11 +172,13 @@
       子供たちのために何かしたい方<br>
       学生のうちに何かやりたい方
     </p>
-    <div class="text-center py-3">
-      <a class="cta_btn03">
-      <span class="cta_btn03-copy">お気軽にお問い合わせください！</span>
-      お問い合わせはこちら
-      </a>
+    <div class="pb-5 text-center">
+      <div class="cta_btn03">
+      <%= link_to new_contact_path do %>
+        <span class="cta_btn03-copy">お気軽にお問い合わせください！</span>
+        <div class="text-white">お問い合わせはこちら</div>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -3,23 +3,35 @@
 <%= breadcrumbs separator: " &rsaquo; ", class: "ml-5" %>
 <ul class="sliders">
   <!--<img src="assets/top.jpg" alt="">-->
-  <img src="assets/top1.jpg" alt="">
-  <img src="assets/top2.jpg" alt="">
-  <img src="assets/top3.jpg" alt="">
+  <div class="bg-top1 img text-white">
+    <p class="heading07 text-center pd-top1" data-en="Value">
+        <b>
+        BORDER FREEは<br>
+        ”全ての子どもたちが等しく勉強できる環境”<br>
+        「教育の機会の公平性」の実現を目指します</b>
+    </p>
+  </div>
+  <div class="bg-top2 img text-white">
+    <p class="heading07 text-center pd-top1" data-en="Value">
+        <b>
+        BORDER FREEは<br>
+        ”全ての子どもたちが等しく勉強できる環境”<br>
+        「教育の機会の公平性」の実現を目指します</b>
+    </p>
+  </div>
+  <div class="bg-top3 img text-white">
+    <p class="heading07 text-center pd-top1" data-en="Value">
+        <b>
+        BORDER FREEは<br>
+        ”全ての子どもたちが等しく勉強できる環境”<br>
+        「教育の機会の公平性」の実現を目指します</b>
+    </p>
+  </div>
 </ul>
 
-<div class="bg-success text-white p-5">
-    <div class="col-md-8 offset-md-2">
-        <p class="heading07 text-center" data-en="Value">
-            BORDER FREEは<br>
-            ”全ての子どもたちが等しく勉強できる環境”<br>
-            「教育の機会の公平性」の実現を目指します
-        </p>
-    </div>
-</div>
 <div class="container">
     <div class="row margin-top element">
-        <div class="col-md-6 mt-5 mb-3">
+        <div class="col-md-6 mt-5 mb-5">
             <h2>BORDER FREEについて</h2>
             <p class="mb-5 mt-3">現在の教育業界は、保護者の経済力や家庭環境、居住地域によって左右されてしまっています。
             そこで私たちは、”全ての子どもたちが等しく勉強できる環境”「教育の機会の公平性」の実現を目指します。
@@ -31,7 +43,7 @@
         </div>
     </div>
     <div class="row margin-top element">
-        <div class="col-md-5 img-maru">
+        <div class="col-md-5 img-maru mb-5">
             <img src="assets/top3.jpg" alt="">
         </div>
         <div class="col-md-7">
@@ -44,32 +56,7 @@
             <%= link_to"詳しく見る", classes_path, class: "btn_01 m-5" %>
         </div>
     </div>
-    <div class="mt-5 element">
-        <div class="text-center margin-top">
-          <h3 class="text-center mt-5 undertitle">活動内容</h3>
-        </div>
-        <ul class="row">
-          <li class="col-md-3 offset-md-1">
-            <div class="img">
-              <img src="assets/top.jpg" alt="" class="maru-img">
-            </div>
-            <p class="pt-4">集団授業の講師として活動します。曜日は固定で週に2コマ以上授業をします。</p>
-          </li>
-          <li class="col-md-3 offset-md-1">
-            <div class="img">
-              <img src="assets/top.jpg" alt="" class="maru-img">
-            </div>
-            <p class="pt-4">個別授業の講師として活動します。曜日は固定で複数の生徒を指導します。</p>
-          </li>
-          <li  class="col-md-3 offset-md-1">
-            <div class="img">
-              <img src="assets/top.jpg" alt="" class="maru-img">
-            </div>
-            <p class="pt-4">BORDER FREEの運営をします。月に何度かのミーティングがあります。
-            一緒に良いNPO法人していきましょう。</p>
-          </li>
-        </ul>
-    </div>
+    <!--料金-->
     <div class="element">
         <div class="text-center margin-top">
           <h3 class="text-center mt-5 undertitle">料金</h3>
@@ -100,9 +87,9 @@
                     	<td class="group3">テキスト</td>
                     </tr>
                     <tr>
-                    	<td class="group1"><a href="#" class="cp_btn">ボタン</a></td>
-                    	<td class="group2"><a href="#" class="cp_btn">ボタン</a></td>
-                    	<td class="group3"><a href="#" class="cp_btn">ボタン</a></td>
+                    	<td class="group1"><%= link_to "詳細", classes_path(anchor: 'individual'), class: 'cp_btn font-weight-bold' %></td>
+                    	<td class="group2"><%= link_to "詳細", classes_path(anchor: 'afterschool'), class: 'cp_btn font-weight-bold' %></td>
+                    	<td class="group3"><%= link_to "詳細", classes_path(anchor: 'sakura'), class: 'cp_btn font-weight-bold' %></td>
                     </tr>
                 </tbody>
             </table>
@@ -171,7 +158,18 @@
             </div>
         </div>
     </div>
-    <%= render "layouts/question" %>
+    <div class="box30">
+        <div class="box-title">お問い合わせ</div>
+        <p class="text-center h5 pt-5">授業の申し込み、その他お問い合わせは<br>こちらからお願いします。<br>
+        <div class="pb-5 text-center">
+          <div class="cta_btn03">
+          <%= link_to new_contact_path do %>
+            <span class="cta_btn03-copy">お気軽にお問い合わせください！</span>
+            <div class="text-white">お問い合わせはこちら</div>
+          <% end %>
+          </div>
+        </div>
+    </div>
 </div>
 <div class="bg-grey pb-5">
     <div class="text-center margin-top">

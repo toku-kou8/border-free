@@ -1,14 +1,6 @@
 @use '~bootstrap/scss/bootstrap';
 @use '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-.sliders img {
-  height: 100vh;
-  margin: auto;
-  max-height: 100%;
-  max-width: 100%;
-  // object-fit: cover;
-  width: 100%;
-}
 .simple-calendar{
   .day{
     height: 80px;
@@ -164,7 +156,6 @@ li{
 /*見出し*/
 .heading07 {
 	position: relative;
-	padding-top: 50px;
 	padding-left: 30px;
 	font-size: 26px;
 }
@@ -178,8 +169,8 @@ li{
 	content: attr(data-en);
 	position: absolute;
 	transform: rotate(-5deg);
-	top: -30px;
-	left: 0;
+	top: 200px;
+	left: 400px;
 	color: rgba(224,66,114,0.6);
 	font-size: 80px;
 	font-weight: 400;
@@ -315,15 +306,6 @@ a.btn_01 {
 a.btn_01:hover {
 	color: #fff;
 	background: #27acd9;
-}
-
-.sliders img {
-  height: 80vh;
-  margin: auto;
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-  // width: 100%;
 }
 
 // .support-head {

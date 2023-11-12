@@ -2,16 +2,68 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 // 画像
+.sliders img {
+  height: 600px;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.sliders .img {
+  height: 600px;
+  background-size: cover;
+  background-position: center center;
+}
+.sliders .bg-top1 {
+  background-image: image-url("top1.jpg");
+}
+.pd-top1 {
+  padding-top: 300px;
+}
+.sliders .bg-top2 {
+  height: 600px;
+  background-image: image-url("top2.jpg");
+}
+.sliders .bg-top3 {
+  height: 600px;
+  background-image: image-url("top3.jpg");
+}
 .bg-support {
   background-image: image-url("top1.jpg");
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
 }
 
 .bg-about {
   background-image: image-url("top2.jpg");
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
+  height: 300px;
+}
+
+.neuro-about {
+  margin: 30px auto;
+  border-radius: 52px;
+  background: #e6e6e6;
+  box-shadow:  25px 25px 50px #c8c8c8,
+            -25px -25px 50px #ffffff;
+}
+.neuro-support {
+  margin: 30px auto;
+  border-radius: 52px;
+  background: #e6e6e6;
+  box-shadow:  25px 25px 50px #7fb1b3,
+             -25px -25px 50px #bbffff;
+}
+.neuro-support2 {
+  margin: 30px auto;
+  border-radius: 52px;
+  background: #e6e6e6;
+  box-shadow:  25px 25px 50px #ba7a3e,
+             -25px -25px 50px #ffb35a;
 }
 
 .bg-classes {
@@ -19,4 +71,5 @@
   background-size: cover;
   background-position: center center;
   padding: 150px 0;
+  background-attachment: fixed;
 }
