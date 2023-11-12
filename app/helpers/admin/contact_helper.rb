@@ -1,4 +1,4 @@
-module Admin::BlogsHelper
+module Admin::ContactHelper
   def sort_asc(column_to_be_sorted)
     link_to "▲", {:column => column_to_be_sorted, :direction => "asc"}
   end

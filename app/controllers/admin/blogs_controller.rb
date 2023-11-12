@@ -4,7 +4,7 @@ class Admin::BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.page(params[:page]).per(10)
+    @blogs = Blog.page(params[:page]).per(10).order("created_at "+ sort_direction)
   end
 
   def new
@@ -40,6 +40,10 @@ class Admin::BlogsController < ApplicationController
   end
 
   private
+  def sort_direction
+    # If params[:direction] is nil, set sort_direction to "desc" by default
+    %W[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
   def blog_params
     params.require(:blog).permit(:title,:content)
   end

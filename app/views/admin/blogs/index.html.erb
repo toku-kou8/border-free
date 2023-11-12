@@ -1,5 +1,4 @@
 <%= render "admins/shared/header" %>
-<% week = ["日", "月", "火", "水", "木", "金", "土"] %>
 <p id="notice"><%= notice %></p>
 <div class="toppage" style="height: 800px;">
   <div class="text-center mt-3">
@@ -15,7 +14,7 @@
           <thead>
             <tr>
               <th>id</th>
-              <th>作成日</th>
+              <th>作成日<%= sort_asc("created_at") %><%= sort_desc("created_at") %></th>
               <th>タイトル</th>
               <th></th>
               <th></th>

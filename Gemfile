@@ -71,3 +71,4 @@ gem 'react-rails'
 #blog
 gem "tinymce-rails"
 gem "tinymce-rails-langs"
+gem "dotenv-rails"

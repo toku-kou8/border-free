@@ -20,14 +20,23 @@
         <ul class="p-0 list-unstyled">
           <li><%= link_to "ご寄付・ボランティア", support_path, class: "text-white" %></li>
           <li><%= link_to "協賛企業", social_path, class: "text-white" %></li>
+          <li><%= link_to "お問い合わせ", new_contact_path, class: "text-white" %></li>
         </ul>
       </div>
       <div class="col-md-3">
-        <h5 class="text-white mt-2 mb-3">ログイン</h5>
-        <ul class="p-0 list-unstyled">
-          <li><%= link_to "生徒ログイン", new_student_session_path, class: "text-white" %></li>
-          <li><%= link_to "講師ログイン", new_teacher_session_path, class: "text-white" %></li>
-          <li><%= link_to "管理者ログイン", new_admin_session_path, class: "text-white" %></li>
+        <h5 class="text-white mt-2 mb-3">SNS</h5>
+        <ul class="follow-me d-flex">
+          <li>
+            <a href="https://twitter.com/borderfree2021" class="btn-social-long-twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </li>
+          <li class="mx-3">
+            <a href="https://www.instagram.com/border_free2021/" class="btn-social-icon-instagram">
+              <span class="btn-social-icon-instagram__square"><i class="fab fa-instagram"></i></span>
+            </a>
+          </li>
+          <!--<li><a href="https://www.instagram.com/border_free2021/"></a></li>-->
         </ul>
       </div>
     </div>

@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'blogs/show'
-    get 'blogs/index'
-  end
   root "public/homes#top"
   # devise_for :teacher, controllers: {
   #   sessions: 'teacher/sessions',
@@ -31,6 +27,7 @@ Rails.application.routes.draw do
     get '/support' => 'homes#support', as: 'support'
     get '/classes' => 'homes#classes', as: 'classes'
     resources :blogs, only:[:index, :show]
+    resources :contacts, only: [:new, :create]
   end
   scope module: :teacher do
     # devise_for :teachers, controllers: {
@@ -51,14 +48,6 @@ Rails.application.routes.draw do
     resources :classes, only: [:index, :show, :update]
   end
 
-  scope module: :admin do
-    # devise_for :admins , controllers: {
-    #   sessions: 'admin/sessions',
-    #   regisrations: 'admin/regisrations',
-    #   passwords: 'admin/passwords'
-    # }
-
-  end
   namespace :admin do
     resources :students, only:[:index, :show]
     resources :teachers, only:[:index, :show]
@@ -68,6 +57,7 @@ Rails.application.routes.draw do
     patch 'classes/subject/:id' => 'classes#subupdate', as: 'subject_update'
     delete 'classes/subject/:id' => 'classes#destory', as: 'subject_destroy'
     resources :blogs
+    resources :contacts, only: [:index, :show]
   end
 
   scope module: :student do

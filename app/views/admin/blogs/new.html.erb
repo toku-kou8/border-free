@@ -15,3 +15,13 @@
     </div>
   </div>
 </div>
+<script>
+  tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    language: 'ja',
+    // 画像のペーストを無許可　textとして登録されるから
+    paste_data_images: false,
+  });
+</script>
