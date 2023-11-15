@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     # byebug
     case resource
       when Admin
-        admin_blogs_path
+        admin_contacts_path
     end
   end
 
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     # byebug
     case resource
       when Admin
-        admin_blogs_path
+        admin_contacts_path
     end
   end
   

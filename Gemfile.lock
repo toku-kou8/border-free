@@ -85,6 +85,7 @@ GEM
     concurrent-ruby (1.1.10)
     connection_pool (2.4.1)
     crass (1.0.6)
+    date (3.3.4)
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -102,12 +103,18 @@ GEM
       activesupport (>= 3.0.0)
     erubi (1.11.0)
     execjs (2.9.1)
+    feedjira (3.2.2)
+      loofah (>= 2.3.1)
+      sax-machine (>= 1.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
     gretel (4.5.0)
       actionview (>= 5.1, < 7.1)
       railties (>= 5.1, < 7.1)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -144,6 +151,13 @@ GEM
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.6.0)
+    multi_xml (0.6.0)
+    mysql2 (0.5.5)
+    net-imap (0.4.4)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
     net-protocol (0.1.3)
       timeout
     net-smtp (0.3.1)
@@ -155,8 +169,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     public_suffix (5.0.0)
-    puma (5.6.5)
-      nio4r (~> 2.0)
+    puma (3.12.6)
     racc (1.6.0)
     rack (2.2.4)
     rack-mini-profiler (2.3.4)
@@ -222,6 +235,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sax-machine (1.3.2)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -284,14 +298,19 @@ DEPENDENCIES
   devise-i18n
   dotenv-rails
   enum_help
+  feedjira
   gretel
+  httparty
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   jp_prefecture
   kaminari
   listen (~> 3.3)
+  mysql2
+  net-imap
+  net-pop
   net-smtp
-  puma (~> 5.0)
+  puma (~> 3.11)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.7)
   rails-i18n

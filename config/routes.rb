@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root "public/homes#top"
   devise_for :admins
+  # devise_for :admins, controllers: {
+  #   sessions: "admins/sessions",
+  #   passwords: "admins/passwords"
+  # }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   scope module: :public do
     resources :teachers, only:[:index, :show]
@@ -9,13 +13,10 @@ Rails.application.routes.draw do
     get '/social' =>'homes#social', as: 'social'
     get '/support' => 'homes#support', as: 'support'
     get '/classes' => 'homes#classes', as: 'classes'
-    resources :blogs, only:[:index, :show]
     resources :contacts, only: [:new, :create]
   end
 
   namespace :admin do
-
-    resources :blogs
     resources :contacts, only: [:index, :show]
   end
 

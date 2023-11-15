@@ -15,5 +15,5 @@
 #   password: '121212')
 
 Admin.create!(
-  email: 'aa@aa',
-  password: '121212')
+  email: 'border.free.2021@gmail.com',
+  password: 'borderfree')
