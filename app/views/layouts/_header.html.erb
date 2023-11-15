@@ -1,0 +1,33 @@
+<div id="top"></div>
+<header class="shadow-sm sticky-top bg-secondary">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top">
+    <div class="container">
+      <%= link_to  root_path do %>
+      <div class="d-flex">
+        <img src="assets/logo.jpg" alt="BORDER FREE", width="50">
+        <h5 class="text-white pt-2 ml-3">BORDER FREE</h5>
+        <%#= image_tag('logo.png') %>
+      </div>
+      <% end %>
+      <!--<a class="navbar-brand p-3" href="/"></a>-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item"><%= link_to 'ホーム', root_path,class: 'nav-link text-white' %></li>
+        <li class="nav-item"><%= link_to '私たちについて', about_path,class: 'nav-link text-white' %></li>
+        <li class="nav-item"><%= link_to "教室について", classes_path, class: 'nav-link text-white' %></li>
+        <% if admin_signed_in? %>
+        <li class="nav-item"><%= link_to '管理者ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-white' %></li>
+        <% else %>
+        <!--<li class="nav-item">-->
+          <%#= link_to '管理者ログイン', new_admin_session_path, class: 'nav-link text-white' %>
+        <!--</li>-->
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

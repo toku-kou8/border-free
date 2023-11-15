@@ -1,0 +1,39 @@
+<%= render "admins/shared/header" %>
+<p id="notice"><%= notice %></p>
+<div class="toppage" style="height: 800px;">
+  <div class="text-center mt-3">
+    <h1 class="text-center undertitle">お問い合わせ一覧</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="mx-5 mb-4">
+          <%= link_to "管理者トップへ戻る", admin_contacts_path, class: "btn btn-info" %>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>問い合わせ日<%= sort_asc("created_at") %><%= sort_desc("created_at") %></th>
+              <th>件名</th>
+              <th>名前</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @contacts.each do |contact| %>
+            <tr>
+              <td><%= contact.id %></td>
+              <td><%= contact.created_at.strftime("20%-y-%-m-%-d %-H:%-M") %></td>
+              <td><%= contact.title %></td>
+              <td><%= contact.name %></td>
+              <td><%= link_to "詳細", admin_contact_path(contact), class: "btn btn-success" %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= paginate @contacts %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,201 @@
+<%= render "layouts/header" %>
+<% breadcrumb :root %>
+<%= breadcrumbs separator: " &rsaquo; ", class: "ml-5" %>
+<ul class="sliders">
+  <!--<img src="assets/top.jpg" alt="">-->
+  <div class="bg-top1 img text-white">
+    <p class="heading07 text-center pd-top1" data-en="Value">
+        <b>
+        BORDER FREEは<br>
+        ”全ての子どもたちが等しく勉強できる環境”<br>
+        「教育の機会の公平性」の実現を目指します</b>
+    </p>
+  </div>
+  <div class="bg-top2 img text-white">
+    <p class="heading07 text-center pd-top1" data-en="Value">
+        <b>
+        BORDER FREEは<br>
+        ”全ての子どもたちが等しく勉強できる環境”<br>
+        「教育の機会の公平性」の実現を目指します</b>
+    </p>
+  </div>
+  <div class="bg-top3 img text-white">
+    <p class="heading07 text-center pd-top1" data-en="Value">
+        <b>
+        BORDER FREEは<br>
+        ”全ての子どもたちが等しく勉強できる環境”<br>
+        「教育の機会の公平性」の実現を目指します</b>
+    </p>
+  </div>
+</ul>
+
+<div class="container">
+    <div class="row margin-top element">
+        <div class="col-md-6 mt-5 mb-5">
+            <h2>BORDER FREEについて</h2>
+            <p class="mb-5 mt-3">現在の教育業界は、保護者の経済力や家庭環境、居住地域によって左右されてしまっています。
+            そこで私たちは、”全ての子どもたちが等しく勉強できる環境”「教育の機会の公平性」の実現を目指します。
+            </p>
+            <%= link_to"詳しく見る", about_path, class: "btn_01 m-5" %>
+        </div>
+        <div class="col-md-5 img-maru">
+            <img src="assets/top3.jpg" alt="">
+        </div>
+    </div>
+    <div class="row margin-top element">
+        <div class="col-md-5 img-maru mb-5">
+            <img src="assets/top3.jpg" alt="">
+        </div>
+        <div class="col-md-7">
+            <h2 class="ml-5">活動内容</h2>
+            <p class="mb-5 ml-5 mt-3">
+                ひとりひとりの生徒と向き合うことで、勉強の楽しさを味わい、
+                生徒の目標達成に向けて全力でサポートします。<br><br>
+                ・個別指導<br>・さくら教室（集団授業）<br>・交流イベント
+            </p>
+            <%= link_to"詳しく見る", classes_path, class: "btn_01 m-5" %>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <div class="margin-top">
+        <h3>Blog</h3>
+        <h6 class="mt-3">ブログ</h6>
+    </div>
+    <div class="container">
+        <iframe class="note-embed" src="https://note.com/embed/notes/ndd3594546512" style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" height="400"></iframe><script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+        <a href="https://note.com/border_free2021" class="btn">その他の投稿はこちら</a>
+    </div>
+</div>
+<div class="bg-grey">
+    <div class="container">
+        <div class="element">
+            <div class="text-center margin-top">
+              <h3 class="text-center mt-5 undertitle">こういった方におすすめ</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4 my-5 offset-md-1">
+                    <img src="assets/top.jpg" alt="top">
+                </div>
+                <div class="col-md-6 offset-md-1">
+                    <div class="row box8 col-md-8">
+                        <p class="h5">一人でなかなか勉強できない</p>
+                    </div>
+                    <div class="row box8 col-md-8">
+                        <p class="h5">自分のペースで勉強に集中したい</p>
+                    </div>
+                    <div class="row box8 col-md-8">
+                        <p class="h5">部活も勉強も全力で取り組みたい</p>
+                    </div>
+                    <div class="row box8 col-md-8">
+                        <p class="h5">効率よく成績UPさせたい</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <!--料金-->
+    <div class="element">
+        <div class="text-center margin-top">
+          <h3 class="text-center mt-5 undertitle">料金</h3>
+        </div>
+        <div class="row">
+            <table class="cp_pricetable3">
+                <thead>
+                    <tr>
+                    	<th class="group1">個別指導*1</th>
+                    	<th class="group2">集団授業</th>
+                    	<th class="group3">さくら教室</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    	<td class="group1">¥2,000</td>
+                    	<td class="group2">¥2,000</td>
+                    	<td class="group3">¥0</td>
+                    </tr>
+                    <tr>
+                    	<td class="group1">1時間</td>
+                    	<td class="group2">1時間</td>
+                    	<td class="group3">1時間</td>
+                    </tr>
+                    <tr>
+                    	<td class="group1">週1~3</td>
+                    	<td class="group2">週1~2</td>
+                    	<td class="group3">月1~2</td>
+                    </tr>
+                    <tr>
+                    	<td class="group1"><%= link_to "詳細", classes_path(anchor: 'individual'), class: 'cp_btn font-weight-bold' %></td>
+                    	<td class="group2"><%= link_to "詳細", classes_path(anchor: 'afterschool'), class: 'cp_btn font-weight-bold' %></td>
+                    	<td class="group3"><%= link_to "詳細", classes_path(anchor: 'sakura'), class: 'cp_btn font-weight-bold' %></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="">＊1 住民税非課税世帯、児童扶養手当受給世帯は無料</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row element">
+        <div class="col-md-8 offset-md-2 text-center">
+            <div class="margin-top">
+                <h3>supporters</h3>
+                <h6 class="mt-3">協賛企業の皆様</h6>
+            </div>
+            <div class="row ">
+                <div>
+                    <img src="assets/greenade.jpg" alt="" width="200">
+                    <p>グリナード永山様</p>
+                </div>
+                <div class="ml-5">
+                    <img src="assets/kelu.jpg" alt="" width="200">
+                    <p>ケル株式会社様</p>
+                </div>
+                <div class="ml-5">
+                    <img src="assets/tama.jpg" alt="" width="200">
+                    <p>多摩市様</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row margin-top">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+    <div class="box30">
+        <div class="box-title">お問い合わせ</div>
+        <p class="text-center h5 pt-5">授業の申し込み、その他お問い合わせは<br>こちらからお願いします。<br>
+        <div class="pb-5 text-center">
+          <div class="cta_btn03">
+          <%= link_to new_contact_path do %>
+            <span class="cta_btn03-copy">お気軽にお問い合わせください！</span>
+            <div class="text-white">お問い合わせはこちら</div>
+          <% end %>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="bg-grey pb-5">
+    <div class="text-center margin-top">
+      <h3 class="text-center mt-5 undertitle">SNS</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <a class="twitter-timeline" href="https://twitter.com/borderfree2021?ref_src=twsrc%5Etfw" data-tweet-limit="3" data-width="400" data-height="500">Tweets by borderfree2021</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+</div>
+<div class="pt-3 clearfix bg-grey">
+  <div class="p-3">
+      <a href="#top" class="text-dark font-weight-bold col-md-2 offset-md-9 btn btn-success">↑ Page Top</a>
+  </div>
+</div>

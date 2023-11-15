@@ -1,0 +1,78 @@
+<%= render "layouts/header" %>
+<% breadcrumb :outline %>
+<%= breadcrumbs separator: " &rsaquo; ", class: "m-5" %>
+<div class="text-center mt-3">
+  <h1 class="text-center undertitle">団体概要</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <table class="table col-md-7 offset-md-3">
+      <tbody>
+        <tr>
+          <th>名称</th>
+          <td>特定非営利活動法人　BORDER　FREE</td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>2022年9月11日</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>東京都</td>
+        </tr>
+        <tr>
+          <th>お問い合わせ</th>
+          <td>Mail：border.free.2021@gmail.com </td>
+        </tr>
+        <tr>
+          <th>代表者</th>
+          <td>二宮龍斗 ・ 村上晃一</td>
+        </tr>
+        <tr>
+          <th>各種資料</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>アクセス</th>
+          <td>東京都多摩市鶴牧3-2　ブリリア多摩センター</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<!--  <div class="row">-->
+<!--    <div id='map' class="col-md-6 offset-md-3 mb-5"></div>-->
+
+<!--    <style>-->
+<!--    #map {-->
+<!--      height: 300px;-->
+<!--      width: 300px;-->
+<!--    }-->
+<!--    </style>-->
+
+<!--    <script>-->
+<!--    let map-->
+
+<!--    function initMap(){-->
+<!--      geocoder = new google.maps.Geocoder()-->
+
+<!--      map = new google.maps.Map(document.getElementById('map'), {-->
+<!--        center: {lat: 35.7098407, lng:139.72313},-->
+<!--        zoom: 15,-->
+<!--      });-->
+
+<!--      marker = new google.maps.Marker({-->
+<!--        position:  {lat: 35.7098407, lng:139.72313},-->
+<!--        map: map-->
+<!--      });-->
+<!--    }-->
+<!--    </script>-->
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=<%#= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>-->
+<!--  </div>-->
+</div>
+<div class="pt-3clearfix bg-grey">
+  <div class="p-3 row">
+    <%= breadcrumbs separator: " &rsaquo; ", class: "col-md-4 pt-2" %>
+      <a href="#top" class="text-dark font-weight-bold col-md-2 offset-md-6 btn btn-success">↑ Page Top</a>
+  </div>
+</div>
