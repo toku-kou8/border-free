@@ -1,37 +1,37 @@
 @use '~bootstrap/scss/bootstrap';
 @use '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-.simple-calendar{
-  .day{
-    height: 80px;
-    width: 80px
-  }
+// .simple-calendar{
+//   .day{
+//     height: 80px;
+//     width: 80px
+//   }
 
-  .wday-0 {}
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
-  .wday-6 {}
+//   .wday-0 {}
+//   .wday-1 {}
+//   .wday-2 {}
+//   .wday-3 {}
+//   .wday-4 {}
+//   .wday-5 {}
+//   .wday-6 {}
 
-  .today {}
-  .past {}
-  .future {}
+//   .today {}
+//   .past {}
+//   .future {}
 
-  .start-date {}
-  .current-month {}
+//   .start-date {}
+//   .current-month {}
 
-  .has-events {}
+//   .has-events {}
 
-  .prev-month {
-    background: #888;
-  }
+//   .prev-month {
+//     background: #888;
+//   }
 
-  .next-month {
-    background: #888;
-  }
-}
+//   .next-month {
+//     background: #888;
+//   }
+// }
 
 .scroll{
   width: 100px;

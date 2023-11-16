@@ -1,4 +1,5 @@
 class Admin::ContactsController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @contacts = Contact.page(params[:page]).per(10).order("created_at "+ sort_direction)
   end

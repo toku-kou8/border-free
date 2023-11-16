@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
+.logo {
+  background-image: image-url("logo.jpg");
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+}
+.logo-footer {
+  background-image: image-url("logo.jpg");
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
 
 .btn-social-icon-instagram {
   text-decoration: none;

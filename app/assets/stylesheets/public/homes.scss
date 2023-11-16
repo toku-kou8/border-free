@@ -29,11 +29,72 @@
   height: 600px;
   background-image: image-url("top3.jpg");
 }
-.bg-support {
-  background-image: image-url("top1.jpg");
+
+.top-img4 {
+  background-image: image-url("top3.jpg");
+  width: 100%;
+  height: 300px;
   background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+  border-radius: 50%;
+}
+
+.top-img5 {
+  background-image: image-url("top2.jpg");
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.top-img6 {
+  background-image: image-url("top.jpg");
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+}
+
+.greenade {
+  background-image: image-url("greenade.jpg");
+  width: 200px;
+  height: 141px;
+  background-size: cover;
+}
+.kelu {
+  background-image: image-url("kelu.jpg");
+  width: 200px;
+  height: 141px;
+  background-size: cover;
+}
+.tama {
+  background-image: image-url("tama.jpg");
+  width: 200px;
+  height: 141px;
+  background-size: cover;
+}
+
+.about-img1 {
+  background-image: image-url("about.jpg");
+  width: 600px;
+  height: 424px;
+  margin: 0 auto;
+  background-size: cover;
+}
+
+.about-ninomiya {
+  background-image: image-url("ninomiya.jpg");
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-size: cover;
+  border-radius: 50%;
+}
+.about-murakami {
+  background-image: image-url("murakami.jpg");
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-size: cover;
+  border-radius: 50%;
 }
 
 .bg-about {
@@ -51,6 +112,15 @@
   box-shadow:  25px 25px 50px #c8c8c8,
             -25px -25px 50px #ffffff;
 }
+
+.bg-support {
+  background-image: image-url("top1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+
 .neuro-support {
   margin: 30px auto;
   border-radius: 52px;
@@ -66,10 +136,74 @@
              -25px -25px 50px #ffb35a;
 }
 
+.support-img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-size: cover;
+  border-radius: 50%;
+}
+.support-img1 {
+  background-image: image-url("top.jpg");
+}
+.support-img2 {
+  background-image: image-url("top.jpg");
+}
+.support-img3 {
+  background-image: image-url("top.jpg");
+}
+.support-img4 {
+  background-image: image-url("top.jpg");
+}
+.support-img5 {
+  background-image: image-url("top.jpg");
+}
+.support-img6 {
+  background-image: image-url("top.jpg");
+}
 .bg-classes {
   background-image: image-url("top2.jpg");
   background-size: cover;
   background-position: center center;
   padding: 150px 0;
   background-attachment: fixed;
+}
+
+.classes-img {
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  background-size: cover;
+  border-radius: 10%;
+  background-position: center;
+}
+.classes-img1 {
+  background-image: image-url("top1.jpg");
+}
+.classes-img2 {
+  background-image: image-url("top2.jpg");
+}
+.classes-img3 {
+  background-image: image-url("top3.jpg");
+}
+.classes-img4 {
+  background-image: image-url("top1.jpg");
+}
+.classes-img5 {
+  background-image: image-url("top2.jpg");
+}
+.classes-img6 {
+  background-image: image-url("top3.jpg");
+}
+.classes-img7 {
+  background-image: image-url("top1.jpg");
+}
+.classes-img8 {
+  background-image: image-url("top2.jpg");
+}
+.classes-img9 {
+  background-image: image-url("top3.jpg");
+}
+.classes-img10 {
+  background-image: image-url("top1.jpg");
 }
