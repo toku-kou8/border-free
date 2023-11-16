@@ -103,18 +103,12 @@ GEM
       activesupport (>= 3.0.0)
     erubi (1.11.0)
     execjs (2.9.1)
-    feedjira (3.2.2)
-      loofah (>= 2.3.1)
-      sax-machine (>= 1.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
     gretel (4.5.0)
       actionview (>= 5.1, < 7.1)
       railties (>= 5.1, < 7.1)
-    httparty (0.21.0)
-      mini_mime (>= 1.0.0)
-      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -151,7 +145,6 @@ GEM
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.6.0)
-    multi_xml (0.6.0)
     mysql2 (0.5.5)
     net-imap (0.4.4)
       date
@@ -235,7 +228,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sax-machine (1.3.2)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -255,10 +247,6 @@ GEM
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
-    tinymce-rails (6.7.2)
-      railties (>= 3.1.1)
-    tinymce-rails-langs (6.20230529)
-      tinymce-rails (~> 6.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -298,9 +286,7 @@ DEPENDENCIES
   devise-i18n
   dotenv-rails
   enum_help
-  feedjira
   gretel
-  httparty
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   jp_prefecture
@@ -320,8 +306,6 @@ DEPENDENCIES
   simple_calendar (~> 2.0)
   spring
   sqlite3 (~> 1.4)
-  tinymce-rails
-  tinymce-rails-langs
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
