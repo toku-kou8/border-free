@@ -69,13 +69,13 @@ gem 'image_processing', '~> 1.2'
 gem 'react-rails'
 
 #blog
-gem "tinymce-rails"
-gem "tinymce-rails-langs"
+# gem "tinymce-rails"
+# gem "tinymce-rails-langs"
 
 gem "dotenv-rails"
 # rss note
-gem 'httparty'
-gem 'feedjira'
+# gem 'httparty'
+# gem 'feedjira'
 # デプロイ
 group :production do
   gem 'mysql2'
