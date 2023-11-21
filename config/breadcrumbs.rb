@@ -3,7 +3,7 @@ crumb :root do
 end
 
 crumb :about do
-  link "BorderFreeとは", about_path
+  link "BORDER FREEとは", about_path
   parent :root
 end
 
