@@ -10,6 +10,18 @@
   object-fit: cover;
 }
 
+.text-shadow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 2;
+  color: #eceaea;
+  font-size: 50px;
+  // text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: black 7px 0 10px;
+  font-weight: bold;
+}
+
 .sliders .img {
   height: 600px;
   background-size: cover;
