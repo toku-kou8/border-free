@@ -22,7 +22,7 @@ crumb :social do
   parent :root
 end
 crumb :classes do
-  link "教室について", classes_path
+  link "サービス紹介", classes_path
   parent :root
 end
 # crumb :projects do

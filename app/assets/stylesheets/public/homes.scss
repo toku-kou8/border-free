@@ -92,6 +92,12 @@
   background-size: cover;
 }
 
+.about-issue {
+  background-image: image-url("issue.png");
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .about-ninomiya {
   background-image: image-url("ninomiya.jpg");
   width: 200px;
@@ -119,6 +125,7 @@
 
 .neuro-about {
   margin: 30px auto;
+  width: 40%;
   border-radius: 52px;
   background: #e6e6e6;
   box-shadow:  25px 25px 50px #c8c8c8,
@@ -189,6 +196,34 @@
   border-radius: 10%;
   background-position: center;
 }
+
+.neuro-classes {
+  margin: 30px auto;
+  border-radius: 52px;
+  background: #e6e6e6;
+  box-shadow:  25px 25px 50px #c8c8c8,
+            -25px -25px 50px #ffffff;
+}
+.class-type:before {
+  content: '';/*何も入れない*/
+  display: inline-block;
+  width: 150px;/*画像の幅*/
+  height: 150px;/*画像の高さ*/
+  background-size: contain;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+.strada:before {
+  background-image: image-url("strada.jpg");
+}
+.houkago:before {
+  background-image: image-url("houkago.jpg");
+}
+.sakura:before {
+  background-image: image-url("sakura.jpg");
+}
+
 .classes-img1 {
   background-image: image-url("top1.jpg");
 }
@@ -204,18 +239,34 @@
 .classes-img5 {
   background-image: image-url("top2.jpg");
 }
-.classes-img6 {
-  background-image: image-url("top3.jpg");
+.sakura1 {
+  background-image: image-url("sakura1.jpg");
 }
-.classes-img7 {
-  background-image: image-url("top1.jpg");
+.sakura2 {
+  background-image: image-url("sakura2.jpg");
 }
-.classes-img8 {
-  background-image: image-url("top2.jpg");
+.sakura3 {
+  background-image: image-url("sakura3.jpg");
 }
 .classes-img9 {
   background-image: image-url("top3.jpg");
 }
 .classes-img10 {
   background-image: image-url("top1.jpg");
+}
+
+@media screen and (max-width:425px) {
+  .about-issue {
+    width: 100%;
+    height: 300px;
+  }
+  .about-img1 {
+    width: 100%;
+    // height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .neuro-about {
+    width: 100%;
+  }
 }

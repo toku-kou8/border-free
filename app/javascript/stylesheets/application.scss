@@ -61,6 +61,11 @@ li{
   margin-top: 150px;
   margin-bottom: 50px;
 }
+
+.slider-contact {
+  margin-left: 40%
+}
+
 .box8{
     padding: 0.5em 1em;
     margin: 2.5em 0;
@@ -180,6 +185,9 @@ li{
 
 .bg-grey {
   background: #f2f2f3;
+}
+.bg-grey-sakura {
+    background: #efeeea;
 }
 
 .box-design10 {
@@ -428,3 +436,9 @@ a.btn_01:hover {
 	opacity: 1;
 }
 
+@media screen and (max-width:425px) {
+  .slider-contact {
+    padding-bottom: 20px;
+    margin-left: 0%
+  }
+}
