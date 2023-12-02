@@ -28,6 +28,48 @@
     </a>
   </div>
 </div>
+<div class="container">
+    <!--料金-->
+    <div class="element">
+        <div class="text-center margin-top">
+          <h3 class="text-center mt-5 undertitle">料金体系</h3>
+        </div>
+        <div class="row">
+            <table class="cp_pricetable3">
+                <thead>
+                    <tr>
+                    	<th class="group1">個別指導STRADA</th>
+                    	<th class="group2">放課後学習教室*1</th>
+                    	<th class="group3">さくら教室(集団授業)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    	<td class="group1">¥2,000</td>
+                    	<td class="group2">¥2,000</td>
+                    	<td class="group3">¥200</td>
+                    </tr>
+                    <tr>
+                    	<td class="group1">1時間</td>
+                    	<td class="group2">1時間</td>
+                    	<td class="group3">1時間</td>
+                    </tr>
+                    <tr>
+                    	<td class="group1">週1~3</td>
+                    	<td class="group2">週1~2</td>
+                    	<td class="group3">月1~2</td>
+                    </tr>
+                    <tr>
+                    	<td class="group1"><a href="#individual" class="cp_btn font-weight-bold">詳細</a></td>
+                    	<td class="group2"><a href="#afterschool" class="cp_btn font-weight-bold">詳細</a></td>
+                    	<td class="group3"><a href="#sakura" class="cp_btn font-weight-bold">詳細</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="">＊1 住民税非課税世帯、児童扶養手当受給世帯は無料</p>
+        </div>
+    </div>
+</div>
 <!--個別指導-->
 <div class="bg-grey py-2 my-5" id="individual">
   <div class="container">
@@ -49,7 +91,7 @@
         </p>
       </div>
       <div class="col-md-3 offset-md-1 img-maru">
-        <div class="classes-img1 classes-img"></div>
+        <div class="strada1 classes-img"></div>
       </div>
     </div>
     <div class="row mb-5 element">
@@ -63,7 +105,7 @@
         </p>
       </div>
       <div class="col-md-3 offset-md-1 img-maru">
-        <div class="classes-img2 classes-img"></div>
+        <div class="strada2 classes-img"></div>
       </div>
     </div>
     <div class="row mb-5 element">
@@ -77,9 +119,14 @@
         </p>
       </div>
       <div class="col-md-3 offset-md-1 img-maru">
-        <div class="classes-img3 classes-img"></div>
+        <div class="strada3 classes-img"></div>
       </div>
     </div>
+  </div>
+  <div class="cta_btn03 slider-contact mb-3">
+    <%= link_to new_contact_path do %>
+      <div class="text-white">お問い合わせはこちら</div>
+    <% end %>
   </div>
 </div>
 <!--放課後学習教室-->
@@ -119,6 +166,11 @@
       <div class="classes-img5 classes-img"></div>
     </div>
   </div>
+  <div class="cta_btn03 slider-contact mb-3">
+    <%= link_to new_contact_path do %>
+      <div class="text-white">お問い合わせはこちら</div>
+    <% end %>
+  </div>
 </div>
 <!--さくら教室-->
 <div class="bg-grey-sakura py-2 my-5" id="sakura">
@@ -144,9 +196,9 @@
     </div>
     <div class="row mb-5 element">
       <div class="col-md-7">
-        <h2 class="pt-3">完全無償の授業</h2>
+        <h2 class="pt-3">１回200円の集団授業</h2>
         <p class="pt-3">企業や行政からご支援を受けて授業料、
-          教材費など全て無償で授業を提供しています。
+          教材費など含めて200円で授業を提供しています。
           「学習塾や家庭教師は費用がかかりすぎる、、、。」
           などの経済的理由で勉強することを諦めてしまうことは非常にもったいないことです。
           すべての未来ある子供達の可能性を広げるべく、さくら教室は全力で子供達の支えとなります。
@@ -170,6 +222,11 @@
         <div class="sakura3 classes-img"></div>
       </div>
     </div>
+  </div>
+  <div class="cta_btn03 slider-contact mb-3">
+    <%= link_to new_contact_path do %>
+      <div class="text-white">お問い合わせはこちら</div>
+    <% end %>
   </div>
 </div>
 <!--ふれあい-->
