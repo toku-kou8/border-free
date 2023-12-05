@@ -17,7 +17,12 @@
         <div class="contact-form">
           <div class="correct-text-field">
             <%= f.label "お問い合わせ件名",class: "h5" %><br>
-            <%= f.text_field :title, placeholder: "お問い合わせ件名", class: "input-form" %>
+            <% if params[:classes] %>
+              <%= f.hidden_field :title, :value => params[:classes] %>
+              <%= params[:classes] %>
+            <% else %>
+              <%= f.text_field :title, placeholder: "お問い合わせ件名", class: "input-form" %>
+            <% end %>
           </div>
           <div class="correct-text-field">
             <%= f.label "お名前",class: "h5" %><br>
