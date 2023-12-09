@@ -1,6 +1,12 @@
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+br.sp_br {
+  display: none;
+}
+
+
 // 画像
 .sliders img {
   height: 600px;
@@ -119,7 +125,7 @@
   background-image: image-url("top2.jpg");
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   height: 300px;
 }
 
@@ -136,7 +142,7 @@
   background-image: image-url("top1.jpg");
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 }
 
 
@@ -185,7 +191,7 @@
   background-size: cover;
   background-position: center center;
   padding: 150px 0;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 }
 
 .classes-img {
@@ -216,12 +222,15 @@
 }
 .strada:before {
   background-image: image-url("strada.jpg");
+  display: flex;
 }
 .houkago:before {
   background-image: image-url("houkago.jpg");
+  display: flex;
 }
 .sakura:before {
   background-image: image-url("sakura.jpg");
+  display: flex;
 }
 
 .strada1 {
@@ -268,5 +277,8 @@
   }
   .neuro-about {
     width: 100%;
+  }
+  br.sp_br {
+    display: block; //425px未満で改行タグを有効に。
   }
 }
