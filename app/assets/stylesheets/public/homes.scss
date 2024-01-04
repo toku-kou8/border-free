@@ -71,23 +71,27 @@ br.sp_br {
   background-size: cover;
 }
 
-.greenade {
-  background-image: image-url("greenade.jpg");
+.supporters-logo {
   width: 200px;
   height: 141px;
   background-size: cover;
+}
+.greenade {
+  background-image: image-url("greenade.jpg");
 }
 .kelu {
   background-image: image-url("kelu.jpg");
-  width: 200px;
-  height: 141px;
-  background-size: cover;
 }
 .tama {
   background-image: image-url("tama.jpg");
-  width: 200px;
-  height: 141px;
-  background-size: cover;
+}
+
+.atl {
+  background-image: image-url("ATL.jpg");
+}
+
+.tamakyo {
+  background-image: image-url("tamakyo.jpg");
 }
 
 .about-img1 {
@@ -280,5 +284,13 @@ br.sp_br {
   }
   br.sp_br {
     display: block; //425px未満で改行タグを有効に。
+  }
+  .display-none {
+    display: none;
+  }
+  
+  .supporters-logo {
+    width: 100px;
+    height: 70px;
   }
 }

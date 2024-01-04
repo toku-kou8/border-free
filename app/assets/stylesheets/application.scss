@@ -97,3 +97,23 @@
   -webkit-transform: rotateX(360deg);
   transform: rotateX(360deg);
 }
+
+/*タイトル付き（ラベルボックス）*/
+.box72{
+	margin: 2em auto; /* ボックスの余白 */
+	background-color:#fff; /* ボックス背景色 */
+	padding:2em; /* ボックス内側余白 */
+	position:relative; /* 配置(ここを基準に) */
+	border: 2px solid #666;/* ボックスの線 (太さ　種類　色)*/
+}
+.box72 .box-title {
+	background-color:#fff; /* タイトル背景色 */
+	font-size: 1em;/* タイトル文字の大きさ */
+	font-weight:800;
+	color: #666; /* タイトル文字色 */
+	padding: 0 5px;/*タイトルの余白*/
+	line-height: 1;/*タイトルの行の高さ*/
+	position:absolute;	/* 配置(ここを動かす) */
+	top: -5px; /*上から（-5px）移動*/
+	left: 20px; /*左から(20px)移動*/
+}
