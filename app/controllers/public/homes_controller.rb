@@ -23,6 +23,9 @@ class Public::HomesController < ApplicationController
   def classes
   end
   
+  def privacy
+  end
+  
   private
 
   def parse_rss(xml_data)

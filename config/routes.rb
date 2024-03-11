@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get '/social' =>'homes#social', as: 'social'
     get '/support' => 'homes#support', as: 'support'
     get '/classes' => 'homes#classes', as: 'classes'
+    get '/privacy' => 'homes#privacy', as: 'privacy'
     resources :contacts, only: [:new, :create]
   end
 
