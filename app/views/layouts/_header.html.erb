@@ -21,6 +21,8 @@
         <li class="nav-item"><%= link_to '私たちについて', about_path,class: 'nav-link text-white' %></li>
         <li class="nav-item"><%= link_to "サービス紹介", classes_path, class: 'nav-link text-white' %></li>
         <li class="nav-item"><a href="https://note.com/border_free2021" target="_blank" rel="noopener noreferrer" class="nav-link text-white">ブログ</a></li>
+        <li class="nav-item"><%= link_to '寄付をする', support_path,class: 'nav-link text-white' %></li>
+        <!--<li class="nav-item"><a href="https://congrant.com/project/borderfree/9791" target="_blank" rel="noopener noreferrer" class="btn_25 nav-link"><span>寄付をする</span></a></li>-->
         <li class="nav-item"><%= link_to "お問い合わせ", new_contact_path, class: 'nav-link text-white' %></li>
         <% if admin_signed_in? %>
         <li class="nav-item"><%= link_to '管理者ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-white' %></li>
