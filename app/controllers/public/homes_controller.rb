@@ -1,11 +1,12 @@
 class Public::HomesController < ApplicationController
   # require 'nokogiri'
   # require 'open-uri'
-  
+
   def top
     # url = 'https://note.com/border_free2021/rss'
     # xml_data = Nokogiri::XML(open(url))
     # @feed = parse_rss(xml_data)
+    @medias = MediaPost.page(params[:page]).per(5).order("date_public "+ sort_direction)
   end
 
   def about
@@ -22,11 +23,16 @@ class Public::HomesController < ApplicationController
 
   def classes
   end
-  
+
   def privacy
   end
-  
+
   private
+  def sort_direction
+    # If params[:direction] is nil, set sort_direction to "desc" by default
+    %W[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
+
 
   def parse_rss(xml_data)
     # ここでXMLデータを適切にパースしてハッシュやオブジェクトに変換するロジックを書く

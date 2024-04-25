@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     # byebug
     case resource
       when Admin
-        admin_contacts_path
+        admin_medias_path
     end
   end
 
@@ -13,10 +13,10 @@ class ApplicationController < ActionController::Base
     # byebug
     case resource
       when Admin
-        admin_contacts_path
+        admin_medias_path
     end
   end
-  
+
   def configure_permitted_parameters
   end
 end
