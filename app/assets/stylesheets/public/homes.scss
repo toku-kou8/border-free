@@ -272,6 +272,17 @@ br.sp_br {
   background-image: image-url("top1.jpg");
 }
 
+.news {
+  background-color: #b2bade;
+}
+.news-border {
+  border-bottom: 1px dotted #707070;
+}
+
+.newes-border {
+  border: 1px dotted #707070;
+}
+
 @media screen and (max-width:425px) {
   .about-issue {
     width: 100%;

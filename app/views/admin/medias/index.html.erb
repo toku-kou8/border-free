@@ -1,0 +1,75 @@
+<%= render "admins/shared/header" %>
+<p id="notice"><%= notice %></p>
+<div class="toppage">
+  <div class="text-center mt-3">
+    <h1 class="text-center undertitle">メディア掲載</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="mx-5 mb-4">
+          <%= link_to "管理者トップへ戻る", admin_medias_path, class: "btn btn-info" %>
+        </div>
+        <h4>新規登録</h4>
+        <div class="mb-4">
+          <%= form_with model: @media, url: admin_medias_path do |f| %>
+          <table>
+            <thead>
+              <tr>
+                <th><%= f.label :掲載日 %></th>
+                <th><%= f.label :媒体 %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= f.date_field :date_public %></td>
+                <td><%= f.select :genre, MediaPost.genres_i18n.invert %></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="">
+            <%= f.label :タイトル %><br />
+            <%= f.text_field :title %>
+          </div>
+          <div class="field">
+            <%= f.label :記事のURL %><br />
+            <%= f.text_field :url %>
+          </div>
+          <div class="field mt-3">
+            <%= f.submit "新規登録", class: "btn btn-success" %>
+          </div>
+          <% end %>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>掲載日<%= sort_asc("date_public") %><%= sort_desc("date_public") %></th>
+              <th>媒体</th>
+              <th>タイトル</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @medias.each do |media| %>
+            <tr>
+              <td><%= link_to media.date_public.strftime("20%-y/%-m/%-d"),admin_media_path(media) %></td>
+              <td><%= media.genre_i18n %></td>
+              <td>
+                <% if media.url.present? %>
+                  <%= link_to media.title, media.url, target: :_blank, rel: "noopener noreferrer" %>
+                <% else %>
+                  <%= media.title %>
+                <% end %>
+              </td>
+              <td><%= link_to "編集", edit_admin_media_path(media), class: "btn btn-info" %></td>
+              <td><%= link_to "削除", admin_media_path(media), method: :delete, class: "btn btn-danger" %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= paginate @medias %>
+      </div>
+    </div>
+  </div>
+</div>

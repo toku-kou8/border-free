@@ -15,10 +15,12 @@ Rails.application.routes.draw do
     get '/classes' => 'homes#classes', as: 'classes'
     get '/privacy' => 'homes#privacy', as: 'privacy'
     resources :contacts, only: [:new, :create]
+    resources :medias, only: [:index]
   end
 
   namespace :admin do
-    resources :contacts, only: [:index, :show]
+    # resources :contacts, only: [:index, :show]
+    resources :medias,only: [:index,:edit,:update,:create,:destroy]
   end
 
 end
