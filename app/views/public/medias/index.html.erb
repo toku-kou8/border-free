@@ -1,0 +1,32 @@
+<%= render "layouts/header" %>
+<p id="notice"><%= notice %></p>
+<div class="toppage">
+  <div class="text-center mt-3">
+    <h1 class="text-center undertitle">メディア掲載</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <ul>
+          掲載日　最近<%= sort_desc("date_public") %> 過去<%= sort_asc("date_public") %>
+          <% @medias.each do |media| %>
+          <li class="news-border">
+            <div class="my-4">
+              <span class="news py-1 px-2 mx-2"><%= media.genre_i18n %></span>
+              <span><%= media.date_public.strftime('%Y/%m/%d') %></span>
+            </div>
+            <p>
+              <% if media.url.present? %>
+                <%= link_to media.title, media.url, target: :_blank, rel: "noopener noreferrer" %>
+              <% else %>
+                <%= media.title %>
+              <% end %>
+            </p>
+          </li>
+        <% end %>
+        </ul>
+        <%= paginate @medias %>
+      </div>
+    </div>
+  </div>
+</div>
