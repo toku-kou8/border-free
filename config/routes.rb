@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   scope module: :public do
     resources :teachers, only:[:index, :show]
     get '/about' => 'homes#about', as: 'about'
-    get '/about/outline' => 'homes#show', as: 'outline'
+    get '/outline' => 'homes#show', as: 'outline'
     get '/social' =>'homes#social', as: 'social'
     get '/support' => 'homes#support', as: 'support'
     get '/classes' => 'homes#classes', as: 'classes'
