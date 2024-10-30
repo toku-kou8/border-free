@@ -240,6 +240,10 @@ br.sp_br {
   background-image: image-url("sakura.jpg");
   display: flex;
 }
+.waseda:before {
+  background-image: image-url("waseda.jpg");
+  display: flex;
+}
 
 .strada1 {
   background-image: image-url("strada1.JPG");
@@ -264,6 +268,12 @@ br.sp_br {
 }
 .sakura3 {
   background-image: image-url("sakura3.jpg");
+}
+.waseda1 {
+  background-image: image-url("waseda1");
+}
+.waseda2 {
+  background-image: image-url("waseda2");
 }
 .classes-img9 {
   background-image: image-url("top3.jpg");
@@ -303,7 +313,7 @@ br.sp_br {
   .display-none {
     display: none;
   }
-  
+
   .supporters-logo {
     width: 100px;
     height: 70px;

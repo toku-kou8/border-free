@@ -5,6 +5,7 @@
 <div class="text-center mt-3 bg-classes text-white">
   <h1 class="text-center undertitle undertitle-w">サービス紹介</h1>
 </div>
+<!--目次-->
 <div class="container mt-5">
   <div class="row mt-5">
     <a href="#individual" class="col-md-3 offset-md-2 text-dark font-weight-bold">
@@ -325,42 +326,118 @@
     </a>
   </div>
 </div>
-<!--ふれあい-->
+<!--わせだ教室-->
 <div class="container">
-  <div class="margin-top element">
-    <h1 class="text-center heading02" id="contact">ふれあい</h1>
+  <div class="margin-top element" id="waseda">
+    <h1 class="text-center heading02 waseda class-type">わせだ教室</h1>
     <p class="mt-5 text-center">
-
+      基礎"の勉強から"楽しく"学べる、誰でも通える学習スペース
     </p>
+  </div>
+  <div class="row">
+    <div class="col-md-7 offset-md-3">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>内容</th>
+            <td>集団授業＋勉強会</td>
+          </tr>
+          <tr>
+            <th>場所</th>
+            <td>
+              みちくさくらす(@新宿区市谷柳町7)
+            </td>
+          </tr>
+          <tr>
+            <th>対象</th>
+            <td>小学5年生〜中学2年生</td>
+          </tr>
+          <tr>
+            <th>費用</th>
+            <td>3000円/月 ※2</td>
+          </tr>
+          <tr>
+            <th>クラス</th>
+            <td>
+              ①数学クラス(中1レベル)<br>
+              ②英語クラス(中1レベル)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      ※2クラス受講の方は5000円/月<br>
+      児童扶養手当受給世帯および住民税非課税世帯の方は無償
+    </div>
   </div>
   <div class="row margin-top element">
     <div class="col-md-7">
-      <h2 class="pt-3">交流イベント</h2>
-      <p class="pt-3">普段はあまり会う機会のない生徒同士やメンターとふれあうイベントもあります。
-      また、提携している大学生のボランティアサークルや交流サークルとのタイアップ企画もあり、
-      児童館のような楽しいイベントが盛りだくさんです。
+      <h2 class="pt-3">「ついていけない」生徒を作らない</h2>
+      <p class="pt-3">つまづきやすいポイントを、授業で基礎からわかりやすく教え、今後の学習をスムーズに行える能力を育てます！
+      講師だけでなくメンターも授業に参加するため、授業中でも質問をして疑問をなくしながら学習を進めることができます！
+      授業後には勉強会も実施することで、習った単元をすぐに復習し学習サイクルの確立を目指します。
       </p>
     </div>
-    <div class="col-md-3 offset-md-1 img-maru">
-      <div class="classes-img9 classes-img"></div>
+    <div class="col-md-3 offset-md-1 img-maru pt-5">
+      <div class="waseda1 classes-img"></div>
     </div>
   </div>
   <div class="row mb-5 element">
     <div class="col-md-7">
-      <h2 class="pt-4">担任制</h2>
+      <h2 class="pt-4">幅広い世代にわたる講師</h2>
       <p class="pt-3">
-        勉強の進度や日常生活の悩みなど、
-        生徒にとっての良き相談相手となる担任がひとりひとりをサポートします。
-        また、保護者の方との面談やご要望も対応させていただき、開かれた学習支援を行います。
+        わせだ教室では大学生だけでなく、シニアや高校生も講師として採用しています。
+        教員経験のあるシニアの方や、これからやりたいことを探している高校生が加わり、多世代にわる環境の中で生徒も講師も成長しあうことができます。
       </p>
     </div>
-    <div class="col-md-3 offset-md-1 img-maru">
-      <div class="classes-img10 classes-img"></div>
+    <div class="col-md-3 offset-md-1 img-maru pt-3">
+      <div class="waseda2 classes-img"></div>
     </div>
   </div>
-  <%= render "layouts/question" %>
+  <div class="cta_btn03 slider-contact mb-3">
+    <a href="https://lin.ee/qXonKB1" target="_blank" rel="noopener noreferrer" class="nav-link text-white">
+      <span class="cta_btn03-copy">お気軽にお問い合わせください！</span>
+      <div class="text-white">申し込みはこちら(LINE)</div>
+    </a>
+  </div>
 </div>
-<div class="pt-3clearfix bg-grey">
+<!--ふれあい-->
+<div class="bg-grey py-2 mu-5">
+  <div class="container">
+    <div class="margin-top element">
+      <h1 class="text-center heading02" id="contact">ふれあい</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row margin-top element">
+      <div class="col-md-7">
+        <h2 class="pt-3">交流イベント</h2>
+        <p class="pt-3">普段はあまり会う機会のない生徒同士やメンターとふれあうイベントもあります。
+        また、提携している大学生のボランティアサークルや交流サークルとのタイアップ企画もあり、
+        児童館のような楽しいイベントが盛りだくさんです。
+        </p>
+      </div>
+      <div class="col-md-3 offset-md-1 img-maru">
+        <div class="classes-img9 classes-img"></div>
+      </div>
+    </div>
+    <div class="row mb-5 element">
+      <div class="col-md-7">
+        <h2 class="pt-4">担任制</h2>
+        <p class="pt-3">
+          勉強の進度や日常生活の悩みなど、
+          生徒にとっての良き相談相手となる担任がひとりひとりをサポートします。
+          また、保護者の方との面談やご要望も対応させていただき、開かれた学習支援を行います。
+        </p>
+      </div>
+      <div class="col-md-3 offset-md-1 img-maru">
+        <div class="classes-img10 classes-img"></div>
+      </div>
+    </div>
+  <%= render "layouts/question" %>
+  </div>
+</div>
+
+<div class="pt-3clearfix">
   <div class="p-3 row">
     <%= breadcrumbs separator: " &rsaquo; ", class: "col-md-4 pt-2" %>
     <a href="#top" class="text-dark font-weight-bold col-md-2 offset-md-6 btn btn-success">↑ Page Top</a>
