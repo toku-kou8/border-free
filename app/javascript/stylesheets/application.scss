@@ -367,6 +367,12 @@ a.btn_01:hover {
 .cp_pricetable3 th.group3:after {
 	color: #131874;
 }
+.cp_pricetable3 th.group4 {
+    background: #ff7f50;
+}
+.cp_pricetable3 th.group4:after {
+    color: #ff7f50;
+}
 /*メインブロック*/
 .cp_pricetable3 tr td {
 	padding-top: 15px;
@@ -393,6 +399,12 @@ a.btn_01:hover {
 }
 .cp_pricetable3 tr:nth-child(2n+0) td.group3 {
 	background: #d7e1f4;
+}
+.cp_pricetable3 tr:nth-child(2n+1) td.group4 {
+    background: #ffb6a1; /* 明るいオレンジ */
+}
+.cp_pricetable3 tr:nth-child(2n+0) td.group4 {
+    background: #ffe4e1; /* 淡いオレンジ */
 }
 /*ボタンデザイン*/
 .cp_pricetable3 a.cp_btn {
